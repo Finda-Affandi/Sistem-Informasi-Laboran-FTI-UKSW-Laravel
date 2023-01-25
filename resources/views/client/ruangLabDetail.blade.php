@@ -37,9 +37,9 @@
             <h3>Software</h3>
                 <table class="ui celled table">
                     <thead>
-                        <tr>
+                        <!-- <tr>
                             <th>Software</th>
-                        </tr>
+                        </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
