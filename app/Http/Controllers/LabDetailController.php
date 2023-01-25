@@ -7,6 +7,7 @@ use App\Models\ruang_lab;
 use App\Models\komputer_lab;
 use App\Models\spek_komputer;
 use App\Models\kalender;
+use App\Models\software_lab;
 
 class LabDetailController extends Controller
 {
@@ -52,10 +53,11 @@ class LabDetailController extends Controller
         $ruangLab = ruang_lab::select()->where('ruangan', $id)->get();
         $spekKomputer = spek_komputer::select()->where('ruangan', $id)->get();
         $kalenderLab = kalender::select()->where('ruangan', $id)->get();
+        $software = software_lab::select()->where('ruangan', $id)->get();
         $kl = komputer_lab::select()->where('ruangan', $id)->get();
         $komputerLab = $kl->sortBy('no_komputer');
         $komputerLab->values()->all();
-        return view('client.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'komputerLab', 'kalenderLab', 'id'));
+        return view('client.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'komputerLab', 'kalenderLab', 'id', 'software'));
     }
 
     /**
