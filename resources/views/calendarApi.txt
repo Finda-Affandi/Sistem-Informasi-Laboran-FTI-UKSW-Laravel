@@ -16,8 +16,9 @@
                 },
                 googleCalendarApiKey: 'AIzaSyAyyeJzeTNKVGotjMXWHt7CjO2zxtKbKjs',
                 events: {
-                    googleCalendarId: '8d74fd9b13d7d5591ab3f46f542a22390765fc9d0072ddea139aa50de09020bc@group.calendar.google.com'
-                }
+                    googleCalendarId: 'masukan id kalender disini'
+                },
+                timeFormat: 'H(:mm)'
             });
         });
     </script>

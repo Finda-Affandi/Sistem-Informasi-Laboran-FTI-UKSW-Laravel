@@ -34,25 +34,6 @@
         </div>
         <div class="column">
             <div class="ui raised segment">
-            <h3>Software</h3>
-                <table class="ui celled table">
-                    <thead>
-                        <!-- <tr>
-                            <th>Software</th>
-                        </tr> -->
-                    </thead>
-                    <tbody>
-                        @foreach ($software as $sf)
-                            <tr>
-                                <td>{{ $sf->software }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="column">
-            <div class="ui raised segment">
                 <h3>Kondisi PC</h3>
                 <table class="ui celled table">
                     <thead>
@@ -74,7 +55,7 @@
                 </table>
             </div>
         </div>
-        <div class="sixteen wide column">
+        <div class="fifteen wide column">
             <div class="ui raised segment">
                 @foreach ($kalenderLab as $kd)
                     @php
