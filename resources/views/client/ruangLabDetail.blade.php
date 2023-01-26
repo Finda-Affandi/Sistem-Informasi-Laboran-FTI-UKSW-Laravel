@@ -53,7 +53,7 @@
         </div>
         <div class="column">
             <div class="ui raised segment">
-                <h3>Kondisi PC</h3>
+                <h3>Kondisi PiC</h3>
                 <table class="ui celled table">
                     <thead>
                         <tr>
