@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('ruang_labs', function (Blueprint $table) {
             $table->id();
             $table->string('ruangan');
+            $table->text('view');
             $table->integer('jumlah_komputer');
             $table->string('nama_pic');
             $table->string('kontak_pic');

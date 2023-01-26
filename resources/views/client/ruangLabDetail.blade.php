@@ -34,12 +34,12 @@
         </div>
         <div class="column">
             <div class="ui raised segment">
-            <h3>Software</h3>
+                <h3>Software</h3>
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                            <th>Software</th>
-                        </tr> -->
+                                                <th>Software</th>
+                                            </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
@@ -53,7 +53,7 @@
         </div>
         <div class="column">
             <div class="ui raised segment">
-                <h3>Kondisi PiC</h3>
+                <h3>Kondisi PC</h3>
                 <table class="ui celled table">
                     <thead>
                         <tr>
@@ -79,6 +79,16 @@
                 @foreach ($kalenderLab as $kd)
                     @php
                         echo $kd->embed_kalender;
+                    @endphp
+                @endforeach
+            </div>
+        </div>
+        <div class="sixteen wide column">
+            <div class="ui raised segment">
+                <h3>View Ruangan</h3>
+                @foreach ($ruangLab as $rl)
+                    @php
+                        echo $rl->view;
                     @endphp
                 @endforeach
             </div>
