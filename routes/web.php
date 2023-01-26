@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LabDetailController;
 use App\Http\Controllers\DosenDetailController;
+use App\Http\Controllers\KelasDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,5 @@ Route::get('gedungFti', function () {
 Route::resource('LabDetail', LabDetailController::class);
 
 Route::resource('DosenDetail', DosenDetailController::class);
+
+Route::resource('KelasDetail', KelasDetailController::class);

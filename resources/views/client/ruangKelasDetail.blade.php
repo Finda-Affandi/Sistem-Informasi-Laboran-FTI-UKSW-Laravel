@@ -1,0 +1,39 @@
+@extends('layout/header')
+@section('content')
+    <link rel="stylesheet" href="{{ asset('css/client.ruangLabDetail.css') }}">
+    <div class="ui stackable three column grid">
+        <div class="six wide column">
+            <div class="ui raised segment">
+                <h3>{{ $id }}</h3>
+                @foreach ($ruangKelas as $rk)
+                    <p>Kapasitas : {{ $rk->kapasitas }}</p>
+                    <table class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Kelengkapan</th>
+                            <th>Jumlah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($kelengkapan as $k)
+                            <tr>
+                                <td>{{ $k->kelengkapan }}</td>
+                                <td>{{ $k->jumlah }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @endforeach
+            </div>
+        </div>
+        <div class="ten wide column">
+            <div class="ui raised segment">
+                @foreach ($kalenderKelas as $kd)
+                    @php
+                        echo $kd->embed_kalender;
+                    @endphp
+                @endforeach
+            </div>
+        </div>
+    </div>
+@endsection
