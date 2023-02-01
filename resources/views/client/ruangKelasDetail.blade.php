@@ -8,21 +8,21 @@
                 @foreach ($ruangKelas as $rk)
                     <p>Kapasitas : {{ $rk->kapasitas }}</p>
                     <table class="ui celled table">
-                    <thead>
-                        <tr>
-                            <th>Kelengkapan</th>
-                            <th>Jumlah</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($kelengkapan as $k)
+                        <thead>
                             <tr>
-                                <td>{{ $k->kelengkapan }}</td>
-                                <td>{{ $k->jumlah }}</td>
+                                <th>Kelengkapan</th>
+                                <th>Jumlah</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($kelengkapan as $k)
+                                <tr>
+                                    <td>{{ $k->kelengkapan }}</td>
+                                    <td>{{ $k->jumlah }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 @endforeach
             </div>
         </div>
@@ -31,6 +31,16 @@
                 @foreach ($kalenderKelas as $kd)
                     @php
                         echo $kd->embed_kalender;
+                    @endphp
+                @endforeach
+            </div>
+        </div>
+        <div class="sixteen wide column">
+            <div class="ui raised segment">
+                <h3>View Ruangan</h3>
+                @foreach ($ruangKelas as $rk)
+                    @php
+                        echo $rk->view;
                     @endphp
                 @endforeach
             </div>

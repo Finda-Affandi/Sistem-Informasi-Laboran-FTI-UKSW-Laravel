@@ -20,12 +20,13 @@
                 <h3>Detail Ruangan</h3>
                 @foreach ($ruangLab as $rl)
                     <p>Ruangan : {{ $rl->ruangan }}</p>
+                    <p>Nama Ruangan : {{ $rl->nama_ruangan }}</p>
                     <p>PIC : {{ $rl->nama_pic }}</p>
-                    <a href="https://api.whatsapp.com/send?phone={{ $rl->kontak_pic }}">
+                    <a href="{{ $rl->kontak_pic }}" target="_blank">
                         <div class="ui blue animated button" tabindex="0">
                             <div class="visible content">Kontak PIC</div>
                             <div class="hidden content">
-                                <i class="whatsapp icon"></i>
+                                <i class="envelope icon"></i>
                             </div>
                         </div>
                     </a>
@@ -38,8 +39,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                <th>Software</th>
-                                            </tr> -->
+                                                                <th>Software</th>
+                                                            </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)

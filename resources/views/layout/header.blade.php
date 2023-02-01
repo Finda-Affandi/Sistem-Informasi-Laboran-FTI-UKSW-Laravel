@@ -33,9 +33,9 @@
     <div class="ui secondary menu">
 
         @if (request()->is('jadwalRuang'))
-            <a class="active item" href="/jadwalRuang"> Jadwal Ruang </a>
+            <a class="active item" href="/jadwalRuang"> List Ruangan </a>
         @else
-            <a class="item" href="/jadwalRuang"> Jadwal Ruang </a>
+            <a class="item" href="/jadwalRuang"> List Ruangan </a>
         @endif
 
         @if (request()->is('ruangLab'))

@@ -14,6 +14,7 @@
                 <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
                     <div class="ui rasied segment">
                         <h3>{{ $r->ruangan }}</h3>
+                        <p>{{ $r->nama_ruangan }}</p>
                     </div>
                 </a>
             </div>
