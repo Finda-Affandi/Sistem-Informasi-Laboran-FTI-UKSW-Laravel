@@ -12,6 +12,7 @@
                             <tr>
                                 <th>Kelengkapan</th>
                                 <th>Jumlah</th>
+                                <th>Kondisi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -19,6 +20,7 @@
                                 <tr>
                                     <td>{{ $k->kelengkapan }}</td>
                                     <td>{{ $k->jumlah }}</td>
+                                    <td>{{ $k->kondisi }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ruang_lab;
+use App\Models\kelengkapan_ruang;
 use App\Models\komputer_lab;
 use App\Models\spek_komputer;
 use App\Models\kalender;
@@ -54,10 +55,11 @@ class LabDetailController extends Controller
         $spekKomputer = spek_komputer::select()->where('ruangan', $id)->get();
         $kalenderLab = kalender::select()->where('ruangan', $id)->get();
         $software = software_lab::select()->where('ruangan', $id)->get();
+        $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
         $kl = komputer_lab::select()->where('ruangan', $id)->get();
         $komputerLab = $kl->sortBy('no_komputer');
         $komputerLab->values()->all();
-        return view('client.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'komputerLab', 'kalenderLab', 'id', 'software'));
+        return view('client.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'kelengkapan', 'komputerLab', 'kalenderLab', 'id', 'software'));
     }
 
     /**

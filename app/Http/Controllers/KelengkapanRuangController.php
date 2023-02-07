@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\ruang_kelas;
 use App\Models\kelengkapan_ruang;
-use App\Models\kelengkapan_kelas;
-use App\Models\kalender;
+use App\Http\Requests\Storekelengkapan_ruangRequest;
+use App\Http\Requests\Updatekelengkapan_ruangRequest;
 
-class KelasDetailController extends Controller
+class KelengkapanRuangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,10 +31,10 @@ class KelasDetailController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\Storekelengkapan_ruangRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Storekelengkapan_ruangRequest $request)
     {
         //
     }
@@ -44,24 +42,21 @@ class KelasDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(kelengkapan_ruang $kelengkapan_ruang)
     {
-        $ruangKelas = ruang_kelas::select()->where('ruangan', $id)->get();
-        $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
-        $kalenderKelas = kalender::select()->where('ruangan', $id)->get();
-        return view('client.ruangKelasDetail', compact('ruangKelas', 'kelengkapan', 'kalenderKelas', 'id'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(kelengkapan_ruang $kelengkapan_ruang)
     {
         //
     }
@@ -69,11 +64,11 @@ class KelasDetailController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\Updatekelengkapan_ruangRequest  $request
+     * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Updatekelengkapan_ruangRequest $request, kelengkapan_ruang $kelengkapan_ruang)
     {
         //
     }
@@ -81,10 +76,10 @@ class KelasDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(kelengkapan_ruang $kelengkapan_ruang)
     {
         //
     }
