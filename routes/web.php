@@ -48,4 +48,4 @@ Route::resource('DosenDetail', DosenDetailController::class);
 
 Route::resource('KelasDetail', KelasDetailController::class);
 
-Route::resource('GedungDetail', KelasDetailController::class);
+Route::resource('GedungDetail', GedungDetailController::class);

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\gedung_fti;
+use App\Models\kelengkapan_ruang;
+use App\Models\kalender;
 
 class GedungDetailController extends Controller
 {
@@ -45,7 +48,10 @@ class GedungDetailController extends Controller
      */
     public function show($id)
     {
-        return view('/');
+        $gedung = gedung_fti::select()->where('ruangan', $id)->get();
+        $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
+        $kalenderKelas = kalender::select()->where('ruangan', $id)->get();
+        return view('client.gedungDetail', compact('gedung', 'kelengkapan', 'kalenderKelas', 'id'));
     }
 
     /**
