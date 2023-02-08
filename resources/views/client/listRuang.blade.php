@@ -10,6 +10,11 @@
         $ruangLab = ruang_lab::all();
         $sortedRuangLab = $ruangLab->sortBy('ruangan');
         $sortedRuangLab->values()->all();
+
+        use App\Models\gedung_fti;
+        $gedungFti = gedung_fti::all();
+        $sortedGedungFti = $gedungFti->sortBy('ruangan');
+        $sortedGedungFti->values()->all();
     @endphp
 @endsection
 @section('content')
@@ -45,5 +50,17 @@
     </div>
     <div class="ui vertical segment">
         <h3>Gedung FTI</h3>
+        <div class="ui stackable five column grid">
+            @foreach ($sortedGedungFti as $g)
+                <div class="column">
+                    <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
+                        <div class="ui rasied segment">
+                            <h3>{{ $g->ruangan }}</h3>
+                            <p>{{ $g->nama_ruangan }}</p>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
