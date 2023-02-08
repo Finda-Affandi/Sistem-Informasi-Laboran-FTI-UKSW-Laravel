@@ -15,8 +15,8 @@
         integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    @if (request()->is('jadwalRuang'))
-        <link rel="stylesheet" href="{{ asset('css/client.jadwalRuang.css') }}">
+    @if (request()->is('listRuang'))
+        <link rel="stylesheet" href="{{ asset('css/client.listRuang.css') }}">
     @elseif (request()->is('ruangLab'))
         <link rel="stylesheet" href="{{ asset('css/client.ruangLab.css') }}">
     @elseif (request()->is('ruangKelas'))
@@ -33,9 +33,9 @@
     <div class="ui secondary menu">
 
         @if (request()->is('jadwalRuang'))
-            <a class="active item" href="/jadwalRuang"> List Ruangan </a>
+            <a class="active item" href="/listRuang"> List Ruangan </a>
         @else
-            <a class="item" href="/jadwalRuang"> List Ruangan </a>
+            <a class="item" href="/listRuang"> List Ruangan </a>
         @endif
 
         @if (request()->is('ruangLab'))

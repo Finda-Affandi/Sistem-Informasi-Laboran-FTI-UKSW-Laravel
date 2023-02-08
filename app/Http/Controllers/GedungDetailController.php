@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ruang_kelas;
-use App\Models\kelengkapan_ruang;
-use App\Models\kalender;
 
-class KelasDetailController extends Controller
+class GedungDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,10 +45,7 @@ class KelasDetailController extends Controller
      */
     public function show($id)
     {
-        $ruangKelas = ruang_kelas::select()->where('ruangan', $id)->get();
-        $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
-        $kalenderKelas = kalender::select()->where('ruangan', $id)->get();
-        return view('client.ruangKelasDetail', compact('ruangKelas', 'kelengkapan', 'kalenderKelas', 'id'));
+        return view('/');
     }
 
     /**

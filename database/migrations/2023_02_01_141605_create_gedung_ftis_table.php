@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('gedung_ftis', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('ruangan');
+            $table->string('nama_ruangan');
+            $table->string('kapasitas');  
+            $table->text('view');  
         });
     }
 

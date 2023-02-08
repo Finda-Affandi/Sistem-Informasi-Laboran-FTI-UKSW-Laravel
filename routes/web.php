@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LabDetailController;
 use App\Http\Controllers\DosenDetailController;
 use App\Http\Controllers\KelasDetailController;
+use App\Http\Controllers\GedungDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('jadwalRuang', function () {
-    return view('/client/jadwalRuang');
+Route::get('listRuang', function () {
+    return view('/client/listRuang');
 });
 
 Route::get('ruangLab', function () {
@@ -46,3 +47,5 @@ Route::resource('LabDetail', LabDetailController::class);
 Route::resource('DosenDetail', DosenDetailController::class);
 
 Route::resource('KelasDetail', KelasDetailController::class);
+
+Route::resource('GedungDetail', KelasDetailController::class);
