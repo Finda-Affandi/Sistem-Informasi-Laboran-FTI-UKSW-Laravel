@@ -1,16 +1,16 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('getData')
     @php
         use App\Models\ruang_kelas;
         $ruangKelas = ruang_kelas::all();
         $sortedRuangKelas = $ruangKelas->sortBy('ruangan');
         $sortedRuangKelas->values()->all();
-
+        
         use App\Models\ruang_lab;
         $ruangLab = ruang_lab::all();
         $sortedRuangLab = $ruangLab->sortBy('ruangan');
         $sortedRuangLab->values()->all();
-
+        
         use App\Models\gedung_fti;
         $gedungFti = gedung_fti::all();
         $sortedGedungFti = $gedungFti->sortBy('ruangan');

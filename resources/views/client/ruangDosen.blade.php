@@ -1,9 +1,9 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('getData')
     @php
         use App\Models\ruang_dosen;
         use App\Models\dosen;
-
+        
         $ruangDosen = ruang_dosen::all();
         $sortedRuangDosen = $ruangDosen->sortBy('ruangan');
         $sortedRuangDosen->values()->all();
@@ -22,7 +22,7 @@
                                 ->get();
                             $dosen = $ds->sortBy('nama_dosen');
                             $dosen->values()->all();
-
+                            
                             foreach ($dosen as $d) {
                                 echo '<b>' . $d->nama_dosen . '</b><br>';
                                 echo $d->jabatan . '<br>';

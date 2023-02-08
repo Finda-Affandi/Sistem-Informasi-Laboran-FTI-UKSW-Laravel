@@ -1,4 +1,4 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/client.ruangLabDetail.css') }}">
     <div class="ui stackable three column grid">
@@ -62,8 +62,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                    <th>Software</th>
-                                                                </tr> -->
+                                                                        <th>Software</th>
+                                                                    </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)

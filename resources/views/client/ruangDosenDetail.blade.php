@@ -1,4 +1,4 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('content')
     <div class="ui stackable two column grid">
         @foreach ($dosen as $ds)

@@ -1,4 +1,4 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('getData')
     @php
         use App\Models\ruang_kelas;

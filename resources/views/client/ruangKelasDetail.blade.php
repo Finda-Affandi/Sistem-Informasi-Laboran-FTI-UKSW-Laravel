@@ -1,4 +1,4 @@
-@extends('layout/header')
+@extends('layout/headerClient')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/client.ruangLabDetail.css') }}">
     <div class="ui stackable three column grid">
