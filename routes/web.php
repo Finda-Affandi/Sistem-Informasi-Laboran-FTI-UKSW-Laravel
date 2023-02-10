@@ -45,6 +45,19 @@ Route::get('administrator', function () {
     return view('/admin/administrator');
 });
 
+Route::get('adminRuangLab', function () {
+    return view('/admin/adminRuangLab');
+});
+
+Route::get('adminRuangKelas', function () {
+    return view('/admin/adminRuangKelas');
+});
+
+Route::get('adminGedungFti', function () {
+    return view('/admin/adminGedungFti');
+});
+
+
 
 Route::resource('LabDetail', LabDetailController::class);
 

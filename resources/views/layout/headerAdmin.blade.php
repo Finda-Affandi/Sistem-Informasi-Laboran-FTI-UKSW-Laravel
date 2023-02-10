@@ -17,28 +17,43 @@
 </head>
 
 <body>
-    <div class="ui sidebar inverted vertical menu" id="sidebarMenu">
-          <a class="item">
-          1
+    <div class="ui sidebar inverted vertical menu">
+        <a class="item">
+            Dashboard
+        </a>
+        <a class="item" href="/adminRuangLab">
+            Ruang Lab
+        </a>
+        <a class="item" href="/adminRuangKelas">
+            Ruang Kelas
         </a>
         <a class="item">
-          2
+            Ruang Dosen
         </a>
-        <a class="item">
-          3
+        <a class="item" href="/adminGedungFti">
+            Gedung FTI
         </a>
-      </div>
-      <div class="pusher">
-          <div class="ui container">
-              @yield('content')
-          </div>
-      </div>
+    </div>
+    <div class="pusher">
+        <div class="ui inverted vertical masthead left aligned segment" id="navBar">
+            <div id="openSidebar" class="ui black vertical animated button" tabindex="0">
+                <div class="visible content">
+                    <i class="white bars icon"></i>
+                </div>
+                <div class="hidden content">Menu</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        @yield('content')
+    </div>
+    </div>
 </body>
 
 </html>
 
 <script>
-    $("#openSidebar").click(function () {
-      $(".ui.labeled.icon.sidebar").sidebar("toggle");
+    $("#openSidebar").click(function() {
+        $(".ui.sidebar").sidebar("toggle");
     });
-  </script>
+</script>
