@@ -44,6 +44,10 @@
             line-height: 1.5
         }
 
+        h1 {
+            text-align: center
+        }
+
         *,
         :after,
         :before {
