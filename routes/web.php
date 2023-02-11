@@ -46,15 +46,15 @@ Route::get('administrator', function () {
 });
 
 Route::get('adminRuangLab', function () {
-    return view('/admin/adminRuangLab');
+    return view('/admin/lab/adminRuangLab');
 });
 
 Route::get('adminRuangKelas', function () {
-    return view('/admin/adminRuangKelas');
+    return view('/admin/kelas/adminRuangKelas');
 });
 
 Route::get('adminGedungFti', function () {
-    return view('/admin/adminGedungFti');
+    return view('/admin/gedung/adminGedungFti');
 });
 
 
