@@ -26,19 +26,19 @@ Route::get('listRuang', function () {
 });
 
 Route::get('ruangLab', function () {
-    return view('/client/ruangLab');
+    return view('/client/lab/ruangLab');
 });
 
 Route::get('ruangKelas', function () {
-    return view('/client/ruangKelas');
+    return view('/client/kelas/ruangKelas');
 });
 
 Route::get('ruangDosen', function () {
-    return view('/client/ruangDosen');
+    return view('/client/dosen/ruangDosen');
 });
 
 Route::get('gedungFti', function () {
-    return view('/client/gedungFti');
+    return view('/client/gedung/gedungFti');
 });
 
 Route::get('administrator', function () {

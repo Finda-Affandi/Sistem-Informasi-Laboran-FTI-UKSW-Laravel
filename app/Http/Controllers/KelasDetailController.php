@@ -51,7 +51,7 @@ class KelasDetailController extends Controller
         $ruangKelas = ruang_kelas::select()->where('ruangan', $id)->get();
         $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
         $kalenderKelas = kalender::select()->where('ruangan', $id)->get();
-        return view('client.ruangKelasDetail', compact('ruangKelas', 'kelengkapan', 'kalenderKelas', 'id'));
+        return view('client.kelas.ruangKelasDetail', compact('ruangKelas', 'kelengkapan', 'kalenderKelas', 'id'));
     }
 
     /**

@@ -51,7 +51,7 @@ class GedungDetailController extends Controller
         $gedung = gedung_fti::select()->where('ruangan', $id)->get();
         $kelengkapan = kelengkapan_ruang::select()->where('ruangan', $id)->get();
         $kalender = kalender::select()->where('ruangan', $id)->get();
-        return view('client.gedungDetail', compact('gedung', 'kelengkapan', 'kalender', 'id'));
+        return view('client.gedung.gedungDetail', compact('gedung', 'kelengkapan', 'kalender', 'id'));
     }
 
     /**

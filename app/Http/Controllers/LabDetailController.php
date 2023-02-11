@@ -59,7 +59,7 @@ class LabDetailController extends Controller
         $kl = komputer_lab::select()->where('ruangan', $id)->get();
         $komputerLab = $kl->sortBy('no_komputer');
         $komputerLab->values()->all();
-        return view('client.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'kelengkapan', 'komputerLab', 'kalenderLab', 'id', 'software'));
+        return view('client.lab.ruangLabDetail', compact('ruangLab', 'spekKomputer', 'kelengkapan', 'komputerLab', 'kalenderLab', 'id', 'software'));
     }
 
     /**

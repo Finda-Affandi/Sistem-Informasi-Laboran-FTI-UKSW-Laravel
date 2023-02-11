@@ -49,7 +49,7 @@ class DosenDetailController extends Controller
         $ds = dosen::select()->where('ruangan', $id)->get();
         $dosen = $ds->sortBy('nama_dosen');
         $dosen->values()->all();
-        return view('client.ruangDosenDetail', compact('dosen', 'id'));
+        return view('client.dosen.ruangDosenDetail', compact('dosen', 'id'));
     }
 
     /**
