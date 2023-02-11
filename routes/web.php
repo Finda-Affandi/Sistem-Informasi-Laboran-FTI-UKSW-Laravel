@@ -5,6 +5,7 @@ use App\Http\Controllers\LabDetailController;
 use App\Http\Controllers\DosenDetailController;
 use App\Http\Controllers\KelasDetailController;
 use App\Http\Controllers\GedungDetailController;
+use App\Http\Controllers\RuangLabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\GedungDetailController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Client area
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,6 +43,8 @@ Route::get('ruangDosen', function () {
 Route::get('gedungFti', function () {
     return view('/client/gedung/gedungFti');
 });
+
+// Administrator area
 
 Route::get('administrator', function () {
     return view('/admin/administrator');
@@ -66,3 +71,5 @@ Route::resource('DosenDetail', DosenDetailController::class);
 Route::resource('KelasDetail', KelasDetailController::class);
 
 Route::resource('GedungDetail', GedungDetailController::class);
+
+Route::resource('RuangLab', RuangLabController::class);

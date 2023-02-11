@@ -35,7 +35,7 @@
                         <td>{{ $lab->jumlah_komputer }}</td>
                         <td>{{ $lab->nama_pic }}</td>
                         <td>
-                            <a href="">
+                            <a href="{{ Route('RuangLab.show', $lab->ruangan) }}">
                                 <div class="ui blue animated fade button" tabindex="0">
                                     <div class="visible content">
                                         <i class="arrow alternate circle right outline icon"></i>

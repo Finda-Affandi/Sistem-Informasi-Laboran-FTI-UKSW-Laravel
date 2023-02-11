@@ -43,10 +43,9 @@
                 <div class="hidden content">Menu</div>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        @yield('content')
-    </div>
+        <div class="ui container">
+            @yield('content')
+        </div>
     </div>
 </body>
 
