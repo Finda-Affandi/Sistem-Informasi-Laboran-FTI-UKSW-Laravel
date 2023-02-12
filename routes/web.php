@@ -62,6 +62,10 @@ Route::get('adminGedungFti', function () {
     return view('/admin/gedung/adminGedungFti');
 });
 
+Route::get('cb', function () {
+    return view('cb');
+});
+
 
 
 Route::resource('LabDetail', LabDetailController::class);

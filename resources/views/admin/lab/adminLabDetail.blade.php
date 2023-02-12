@@ -116,8 +116,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                                                                                            <th>Software</th>
-                                                                                                                                        </tr> -->
+                                                                                                                                                                                    <th>Software</th>
+                                                                                                                                                                                </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
@@ -172,8 +172,29 @@
             <div class="ui raised segment">
                 @foreach ($kalenderLab as $kd)
                     @php
-                        echo $kd->embed_kalender;
+                        $calId = $kd->embed_kalender;
                     @endphp
+                    <script type='text/javascript'>
+                        var calId = '<?= $calId ?>'
+
+                        $(document).ready(function() {
+
+                            $('#calendar').fullCalendar({
+                                plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                header: {
+                                    left: 'prev,next, today',
+                                    center: 'title',
+                                    right: 'dayGridMonth, month, listYear'
+                                },
+                                googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
+                                events: {
+                                    googleCalendarId: calId
+                                },
+                                timeFormat: 'H(:mm)'
+                            });
+                        });
+                    </script>
+                    <div id='calendar'></div>
                 @endforeach
                 <a href="">
                     <div class="ui blue animated button" tabindex="0">

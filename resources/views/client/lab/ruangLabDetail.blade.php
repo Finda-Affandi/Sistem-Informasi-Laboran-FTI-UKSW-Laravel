@@ -62,8 +62,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                        <th>Software</th>
-                                                                    </tr> -->
+                                                                            <th>Software</th>
+                                                                        </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
@@ -112,8 +112,29 @@
                 <h3>View Ruangan</h3>
                 @foreach ($ruangLab as $rl)
                     @php
-                        echo $rl->view;
+                        $calId = $kd->embed_kalender;
                     @endphp
+                    <script type='text/javascript'>
+                        var calId = '<?= $calId ?>'
+
+                        $(document).ready(function() {
+
+                            $('#calendar').fullCalendar({
+                                plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                header: {
+                                    left: 'prev,next, today',
+                                    center: 'title',
+                                    right: 'dayGridMonth, month, listYear'
+                                },
+                                googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
+                                events: {
+                                    googleCalendarId: calId
+                                },
+                                timeFormat: 'H(:mm)'
+                            });
+                        });
+                    </script>
+                    <div id='calendar'></div>
                 @endforeach
             </div>
         </div>
