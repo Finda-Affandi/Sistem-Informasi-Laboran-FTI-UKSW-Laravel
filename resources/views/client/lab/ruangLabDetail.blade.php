@@ -62,8 +62,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                            <th>Software</th>
-                                                                        </tr> -->
+                                                                                <th>Software</th>
+                                                                            </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
@@ -102,16 +102,6 @@
             <div class="ui raised segment">
                 @foreach ($kalenderLab as $kd)
                     @php
-                        echo $kd->embed_kalender;
-                    @endphp
-                @endforeach
-            </div>
-        </div>
-        <div class="sixteen wide column">
-            <div class="ui raised segment">
-                <h3>View Ruangan</h3>
-                @foreach ($ruangLab as $rl)
-                    @php
                         $calId = $kd->embed_kalender;
                     @endphp
                     <script type='text/javascript'>
@@ -135,6 +125,16 @@
                         });
                     </script>
                     <div id='calendar'></div>
+                @endforeach
+            </div>
+        </div>
+        <div class="sixteen wide column">
+            <div class="ui raised segment">
+                <h3>View Ruangan</h3>
+                @foreach ($ruangLab as $rl)
+                    @php
+                        echo $rl->view;
+                    @endphp
                 @endforeach
             </div>
         </div>
