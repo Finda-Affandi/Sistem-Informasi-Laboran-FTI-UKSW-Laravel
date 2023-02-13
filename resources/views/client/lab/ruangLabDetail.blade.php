@@ -1,23 +1,32 @@
 @extends('layout/headerClient')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/client.ruangLabDetail.css') }}">
-    <div class="ui stackable three column grid">
+    <div class="ui stackable two column grid">
         <div class="column">
             <div class="ui raised segment">
                 <h3>Detail Ruangan</h3>
-                @foreach ($ruangLab as $rl)
-                    <p>Ruangan : {{ $rl->ruangan }}</p>
-                    <p>Nama Ruangan : {{ $rl->nama_ruangan }}</p>
-                    <p>PIC : {{ $rl->nama_pic }}</p>
-                    <a href="{{ $rl->kontak_pic }}" target="_blank">
-                        <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Kontak PIC</div>
-                            <div class="hidden content">
-                                <i class="envelope icon"></i>
-                            </div>
-                        </div>
-                    </a>
-                @endforeach
+                <table class="ui celled table">
+                    <tbody>
+                        @foreach ($ruangLab as $rl)
+                            <tr>
+                                <td>Ruangan</td>
+                                <td>{{ $rl->ruangan }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Ruangan</td>
+                                <td>{{ $rl->nama_ruangan }}</td>
+                            </tr>
+                            <tr>
+                                <td>PIC</td>
+                                <td>{{ $rl->nama_pic }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email PIC</td>
+                                <td>{{ $rl->kontak_pic }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="column">
@@ -46,14 +55,36 @@
         <div class="column">
             <div class="ui raised segment">
                 <h3>Spesifikasi Komputer</h3>
-                @foreach ($spekKomputer as $sk)
-                    <p>Processor : {{ $sk->processor }}</p>
-                    <p>Ram : {{ $sk->ram }}</p>
-                    <p>Tipe Penyimpanan : {{ $sk->tipe_penyimpanan }}</p>
-                    <p>Monitor : {{ $sk->monitor }}</p>
-                    <p>Motherboard : {{ $sk->motherboard }}</p>
-                    <p>Tipe Lab : {{ $sk->tipe }}</p>
-                @endforeach
+                <table class="ui celled table">
+                    <tbody>
+                        @foreach ($spekKomputer as $sk)
+                            <tr>
+                                <td>Processor</td>
+                                <td>{{ $sk->processor }}</td>
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>{{ $sk->ram }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tipe Penyimpanan</td>
+                                <td>{{ $sk->tipe_penyimpanan }}</td>
+                            </tr>
+                            <tr>
+                                <td>Monitor</td>
+                                <td>{{ $sk->monitor }}</td>
+                            </tr>
+                            <tr>
+                                <td>Motherboard</td>
+                                <td>{{ $sk->motherboard }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tipe Lab</td>
+                                <td>{{ $sk->tipe }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="column">
@@ -62,8 +93,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                                <th>Software</th>
-                                                                            </tr> -->
+                                                                                            <th>Software</th>
+                                                                                        </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)
