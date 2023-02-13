@@ -30,7 +30,7 @@ class RuangLabController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.lab.adminAddLab');
     }
 
     /**
