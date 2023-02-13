@@ -9,4 +9,5 @@ class ruang_lab extends Model
 {
     use HasFactory;
     protected $table = 'ruang_labs';
+    public $timestamps = false;
 }

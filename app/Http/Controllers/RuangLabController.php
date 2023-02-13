@@ -41,7 +41,15 @@ class RuangLabController extends Controller
      */
     public function store(Storeruang_labRequest $request)
     {
-        //
+        $store = new ruang_lab;
+        $store->ruangan = $request->ruangan;
+        $store->nama_ruangan = $request->nama_ruangan;
+        $store->view = $request->view;
+        $store->jumlah_komputer = $request->jumlah_komputer;
+        $store->nama_pic = $request->nama_pic;
+        $store->kontak_pic = $request->kontak_pic;
+        $store->save();
+        return view('admin.lab.adminRuangLab');
     }
 
     /**

@@ -9,7 +9,7 @@
 @endsection
 @section('content')
     <div class="ui raised segment">
-        <a href="">
+        <a href="{{ route('RuangLab.create') }}">
             <div class="ui blue animated button" tabindex="0">
                 <div class="visible content">Tambah Ruang Lab</div>
                 <div class="hidden content">

@@ -13,7 +13,8 @@ class Storeruang_labRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // return false; ubah ini menjadi return Auth::check(); saat auth jadi
+        return true;
     }
 
     /**
