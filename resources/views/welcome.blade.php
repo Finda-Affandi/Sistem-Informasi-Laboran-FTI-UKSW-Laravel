@@ -411,13 +411,20 @@
     <main class="main">
         <section class="contact">
             <h1 class="title">Sistem Informasi Laboran</h1>
-            <h2 class="sub-title">Mohon maaf, website ini sedang dalam pengembangan!</h2>
+            <h2 class="sub-title">Website ini sedang dalam pengembangan!</h2>
             <br>
             <br>
             <a href="/listRuang">
                 <button class="ui blue right labeled icon button">
                     <i class="right arrow icon"></i>
-                    Uji Coba
+                    Uji Coba Client
+                </button>
+            </a>
+            <br>
+            <a href="/administrator">
+                <button class="ui blue right labeled icon button">
+                    <i class="right arrow icon"></i>
+                    Uji Coba Admin
                 </button>
             </a>
         </section>
