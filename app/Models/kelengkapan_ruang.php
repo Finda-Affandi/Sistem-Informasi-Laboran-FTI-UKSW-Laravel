@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class kelengkapan_ruang extends Model
 {
     use HasFactory;
+    protected $table = 'kelengkapan_ruangs';
+    public $timestamps = false;
 }

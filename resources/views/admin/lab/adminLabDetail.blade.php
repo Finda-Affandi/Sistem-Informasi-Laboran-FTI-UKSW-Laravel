@@ -1,5 +1,9 @@
 @extends('layout.headerAdmin')
 @section('content')
+    @php
+        session_start();
+        $_SESSION['idRuang'] = $id;
+    @endphp
     <div class="ui stackable two column grid">
         <div class="column">
             <div class="ui raised segment">
@@ -44,7 +48,7 @@
                         <br>
                         <p>Kelengkapan belum ditambahkan!</p>
                         <br>
-                        <a href="">
+                        <a href="{{ route('Kelengkapan.create') }}">
                             <div class="ui blue animated button" tabindex="0">
                                 <div class="visible content">Tambah Kelengkapan</div>
                                 <div class="hidden content">
@@ -77,6 +81,14 @@
                             <div class="visible content">Edit</div>
                             <div class="hidden content">
                                 <i class="pencil alternate icon"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('Kelengkapan.create') }}">
+                        <div class="ui blue animated button" tabindex="0">
+                            <div class="visible content">Tambah</div>
+                            <div class="hidden content">
+                                <i class="plus icon"></i>
                             </div>
                         </div>
                     </a>

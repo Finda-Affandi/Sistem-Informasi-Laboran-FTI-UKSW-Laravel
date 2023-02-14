@@ -25,7 +25,7 @@ class KelengkapanRuangController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.all.adminAddKelengkapan');
     }
 
     /**
@@ -36,7 +36,13 @@ class KelengkapanRuangController extends Controller
      */
     public function store(Storekelengkapan_ruangRequest $request)
     {
-        //
+        $store = new kelengkapan_ruang;
+        $store->ruangan = $request->ruangan;
+        $store->kelengkapan = $request->kelengkapan;
+        $store->jumlah = $request->jumlah;
+        $store->kondisi = $request->kondisi;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

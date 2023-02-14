@@ -6,6 +6,7 @@ use App\Http\Controllers\DosenDetailController;
 use App\Http\Controllers\KelasDetailController;
 use App\Http\Controllers\GedungDetailController;
 use App\Http\Controllers\RuangLabController;
+use App\Http\Controllers\KelengkapanRuangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +78,5 @@ Route::resource('KelasDetail', KelasDetailController::class);
 Route::resource('GedungDetail', GedungDetailController::class);
 
 Route::resource('RuangLab', RuangLabController::class);
+
+Route::resource('Kelengkapan', KelengkapanRuangController::class);
