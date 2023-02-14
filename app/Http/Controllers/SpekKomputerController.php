@@ -25,7 +25,7 @@ class SpekKomputerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.lab.adminAddSpesifikasi');
     }
 
     /**
@@ -36,7 +36,16 @@ class SpekKomputerController extends Controller
      */
     public function store(Storespek_komputerRequest $request)
     {
-        //
+        $store = new spek_komputer;
+        $store->ruangan = $request->ruangan;
+        $store->processor = $request->processor;
+        $store->ram = $request->ram;
+        $store->tipe_penyimpanan = $request->tipe_penyimpanan;
+        $store->monitor = $request->monitor;
+        $store->motherboard = $request->motherboard;
+        $store->tipe = $request->tipe;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

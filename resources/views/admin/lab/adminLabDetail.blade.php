@@ -103,7 +103,7 @@
                         <br>
                         <p>Spesifikasi Komputer belum ditambahkan!</p>
                         <br>
-                        <a href="">
+                        <a href="{{ route('Spesifikasi.create') }}">
                             <div class="ui blue animated button" tabindex="0">
                                 <div class="visible content">Tambah Spesifikasi Komputer</div>
                                 <div class="hidden content">
