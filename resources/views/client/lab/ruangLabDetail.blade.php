@@ -20,13 +20,19 @@
                                 <td>PIC</td>
                                 <td>{{ $rl->nama_pic }}</td>
                             </tr>
-                            <tr>
-                                <td>Email PIC</td>
-                                <td>{{ $rl->kontak_pic }}</td>
-                            </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @foreach ($ruangLab as $rl)
+                    <a href="{{ $rl->kontak_pic }}" target="_blank">
+                        <div class="ui blue animated button" tabindex="0">
+                            <div class="visible content">Kontak PIC</div>
+                            <div class="hidden content">
+                                <i class="envelope icon"></i>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         <div class="column">
@@ -93,8 +99,8 @@
                 <table class="ui celled table">
                     <thead>
                         <!-- <tr>
-                                                                                            <th>Software</th>
-                                                                                        </tr> -->
+                                                                                                                <th>Software</th>
+                                                                                                            </tr> -->
                     </thead>
                     <tbody>
                         @foreach ($software as $sf)

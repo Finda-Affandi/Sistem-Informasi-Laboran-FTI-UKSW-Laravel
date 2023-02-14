@@ -24,8 +24,8 @@
                 <input type="text" name="nama_pic" placeholder="Nama PIC" class="form-control">
             </div>
             <div class="field">
-                <label>Kontak PIC</label>
-                <input type="text" name="kontak_pic" placeholder="Kontak PIC" class="form-control">
+                <label>Email PIC</label>
+                <input type="text" name="kontak_pic" placeholder="Email PIC" class="form-control">
             </div>
             <br>
             <button type="submit" class="ui blue animated button" tabindex="0">
