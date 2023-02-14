@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2023 at 08:45 AM
+-- Generation Time: Feb 14, 2023 at 03:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -159,7 +159,11 @@ CREATE TABLE `kelengkapan_ruangs` (
 
 INSERT INTO `kelengkapan_ruangs` (`id`, `ruangan`, `kelengkapan`, `jumlah`, `kondisi`) VALUES
 (1, '306', 'Papan Tulis', 1, 'Baik'),
-(2, '306', 'Proyektor Hitachi', 1, 'Baik');
+(2, '306', 'Proyektor Hitachi', 1, 'Baik'),
+(3, '453', 'Papan Tulis', 1, 'Baik'),
+(6, '506', 'Papan Tulis Tokai', 1, 'Baik'),
+(7, '506', 'Proyektor Hitachi', 1, 'Baik'),
+(8, '506', 'AC Daikin', 2, 'Baik');
 
 -- --------------------------------------------------------
 
@@ -206,17 +210,17 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2023_01_22_052053_create_ruang_labs_table', 1),
 (6, '2023_01_22_052113_create_komputer_labs_table', 1),
 (7, '2023_01_22_052138_create_spek_komputers_table', 1),
-(9, '2023_01_22_185252_create_ruang_dosens_table', 3),
-(11, '2023_01_22_185336_create_dosens_table', 4),
-(12, '2023_01_25_013657_create_software_labs_table', 5),
-(14, '2023_01_26_042535_create_kelengkapan_kelas_table', 5),
-(19, '2023_01_22_183007_create_kalenders_table', 7),
-(21, '2023_01_26_042427_create_ruang_kelas_table', 8),
-(23, '2023_01_22_052053_create_ruang_labs_table', 9),
-(25, '2023_02_07_023623_create_kelengkapan_ruangs_table', 10),
-(26, '2023_02_01_141605_create_gedung_ftis_table', 11);
+(8, '2023_01_22_183007_create_kalenders_table', 1),
+(9, '2023_01_22_185252_create_ruang_dosens_table', 1),
+(10, '2023_01_22_185336_create_dosens_table', 1),
+(11, '2023_01_25_013657_create_software_labs_table', 1),
+(12, '2023_01_26_042427_create_ruang_kelas_table', 1),
+(13, '2023_01_26_042535_create_kelengkapan_kelas_table', 1),
+(14, '2023_02_01_141605_create_gedung_ftis_table', 1),
+(15, '2023_02_07_023623_create_kelengkapan_ruangs_table', 1);
 
 -- --------------------------------------------------------
 
@@ -315,7 +319,9 @@ CREATE TABLE `ruang_labs` (
 
 INSERT INTO `ruang_labs` (`id`, `ruangan`, `nama_ruangan`, `view`, `jumlah_komputer`, `nama_pic`, `kontak_pic`) VALUES
 (1, '453', 'Laboratorium Riset', '<iframe width=\"1095\" height=\"730\" allowfullscreen style=\"border-style:none;\" src=\"https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https%3A//images.unsplash.com/photo-1674719334770-edf15a5fcad1%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1760%26q%3D80&title=Tes&author=Laboran%20FTI&autoLoad=true\"></iframe>', 10, 'Chester', 'https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=vandhie97@gmail.com'),
-(2, '455', 'Laboratorium Umum', '<iframe width=\"1095\" height=\"730\" allowfullscreen style=\"border-style:none;\" src=\"https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https%3A//images.unsplash.com/photo-1674719334770-edf15a5fcad1%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1760%26q%3D80&title=Tes&author=Laboran%20FTI&autoLoad=true\"></iframe>', 40, 'Chester', 'https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=vandhie97@gmail.com');
+(2, '455', 'Laboratorium Umum', '<iframe width=\"1095\" height=\"730\" allowfullscreen style=\"border-style:none;\" src=\"https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https%3A//images.unsplash.com/photo-1674719334770-edf15a5fcad1%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1760%26q%3D80&title=Tes&author=Laboran%20FTI&autoLoad=true\"></iframe>', 40, 'Chester', 'https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=vandhie97@gmail.com'),
+(3, '506', 'Laboratorium Oracle', 'xxx', 35, 'Alby', '8342'),
+(7, '459', 'Laboratorium Umum', 'xxx', 40, 'Fandi', 'https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=f.affnd@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -362,7 +368,8 @@ CREATE TABLE `spek_komputers` (
 
 INSERT INTO `spek_komputers` (`id`, `ruangan`, `processor`, `ram`, `tipe_penyimpanan`, `monitor`, `motherboard`, `tipe`) VALUES
 (1, '455', 'Intel i3 3220', '2 GB', 'Hardisk', 'Acer 19\"', 'Asrock', 'Kentang'),
-(2, '453', 'Intel Pentium', '2 GB', 'Hardisk', 'AOC 16\"', 'Gigabyte', 'Kentang');
+(2, '453', 'Intel Pentium', '2 GB', 'Hardisk', 'AOC 16\"', 'Gigabyte', 'Kentang'),
+(3, '506', 'Intel i3 3220', '4GB', 'HDD', 'Asus 16\"', 'Gigabyte X300', 'Spesifikasi Menengah');
 
 -- --------------------------------------------------------
 
@@ -523,7 +530,7 @@ ALTER TABLE `kelengkapan_kelas`
 -- AUTO_INCREMENT for table `kelengkapan_ruangs`
 --
 ALTER TABLE `kelengkapan_ruangs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `komputer_labs`
@@ -535,7 +542,7 @@ ALTER TABLE `komputer_labs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -559,7 +566,7 @@ ALTER TABLE `ruang_kelas`
 -- AUTO_INCREMENT for table `ruang_labs`
 --
 ALTER TABLE `ruang_labs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `software_labs`
@@ -571,7 +578,7 @@ ALTER TABLE `software_labs`
 -- AUTO_INCREMENT for table `spek_komputers`
 --
 ALTER TABLE `spek_komputers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
