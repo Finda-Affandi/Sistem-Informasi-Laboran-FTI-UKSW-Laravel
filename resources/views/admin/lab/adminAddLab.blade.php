@@ -1,6 +1,6 @@
 @extends('layout.headerAdmin')
 @section('content')
-    <div class="ui raised padded segment">
+    <div class="ui raised segment">
         <form class="ui form" action="{{ route('RuangLab.store') }}" method="POST">
             @csrf
             <div class="field">

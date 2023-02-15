@@ -43,6 +43,25 @@ class RuangLabController extends Controller
     {
         $kontak = "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=" . $request->kontak_pic;
 
+        for($i = 0; $i < (int)$request->jumlah_komputer + 1; $i++) {
+            if($i == 0) {
+                $store = new komputer_lab;
+                $store->ruangan = $request->ruangan;
+                $store->no_komputer = "Pengajar"; 
+                $store->kondisi = "Baik";
+                $store->keterangan = " ";
+                $store->save();
+            }
+            else {
+                $store = new komputer_lab;
+                $store->ruangan = $request->ruangan;
+                $store->no_komputer = $i; 
+                $store->kondisi = "Baik";
+                $store->keterangan = " ";
+                $store->save();
+            }
+        }
+
         $store = new ruang_lab;
         $store->ruangan = $request->ruangan;
         $store->nama_ruangan = $request->nama_ruangan;

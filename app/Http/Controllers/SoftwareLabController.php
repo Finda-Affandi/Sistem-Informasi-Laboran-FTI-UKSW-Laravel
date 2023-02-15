@@ -25,7 +25,7 @@ class SoftwareLabController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.lab.adminAddSoftware');
     }
 
     /**
@@ -36,7 +36,11 @@ class SoftwareLabController extends Controller
      */
     public function store(Storesoftware_labRequest $request)
     {
-        //
+        $store = new software_lab;
+        $store->ruangan = $request->ruangan;
+        $store->software = $request->software;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

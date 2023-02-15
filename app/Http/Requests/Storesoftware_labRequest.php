@@ -13,7 +13,8 @@ class Storesoftware_labRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // return false;
+        return true;
     }
 
     /**

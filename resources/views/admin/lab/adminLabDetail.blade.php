@@ -162,7 +162,7 @@
                         <br>
                         <p>Software belum ditambahkan!</p>
                         <br>
-                        <a href="">
+                        <a href="{{ route('Software.create') }}">
                             <div class="ui blue animated button" tabindex="0">
                                 <div class="visible content">Tambah Software</div>
                                 <div class="hidden content">
@@ -194,49 +194,55 @@
         </div>
         <div class="sixteen wide column">
             <div class="ui raised segment">
-                <h3>Kondisi PC</h3>
-                @if (count($komputerLab) == 0)
-                    <center>
-                        <br>
-                        <p>List Komputer belum ditambahkan!</p>
-                        <br>
-                        <a href="">
-                            <div class="ui blue animated button" tabindex="0">
-                                <div class="visible content">Tambah Komputer</div>
-                                <div class="hidden content">
-                                    <i class="plus icon"></i>
+                <div class="ui accordion">
+                    <div class="title">
+                        <h3>Kondisi PC <i class="dropdown icon"></i></h3>
+                    </div>
+                    <div class="content">
+                        @if (count($komputerLab) == 0)
+                            <center>
+                                <br>
+                                <p>List Komputer belum ditambahkan!</p>
+                                <br>
+                                <a href="">
+                                    <div class="ui blue animated button" tabindex="0">
+                                        <div class="visible content">Tambah Komputer</div>
+                                        <div class="hidden content">
+                                            <i class="plus icon"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </center>
+                        @else
+                            <table class="ui celled table">
+                                <thead>
+                                    <tr>
+                                        <th>No Komputer</th>
+                                        <th>Kondisi</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($komputerLab as $kl)
+                                        <tr>
+                                            <td>{{ $kl->no_komputer }}</td>
+                                            <td>{{ $kl->kondisi }}</td>
+                                            <td>{{ $kl->keterangan }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <a href="">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">
+                                        <i class="pencil alternate icon"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </center>
-                @else
-                    <table class="ui celled table">
-                        <thead>
-                            <tr>
-                                <th>No Komputer</th>
-                                <th>Kondisi</th>
-                                <th>Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($komputerLab as $kl)
-                                <tr>
-                                    <td>{{ $kl->no_komputer }}</td>
-                                    <td>{{ $kl->kondisi }}</td>
-                                    <td>{{ $kl->keterangan }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <a href="">
-                        <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Edit</div>
-                            <div class="hidden content">
-                                <i class="pencil alternate icon"></i>
-                            </div>
-                        </div>
-                    </a>
-                @endif
+                            </a>
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
         <div class="sixteen wide column">
@@ -312,4 +318,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function() {
+            $('.ui.accordion').accordion();
+        });
+    </script>
 @endsection
