@@ -25,7 +25,7 @@ class KalenderController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.lab.adminAddKalender');
     }
 
     /**

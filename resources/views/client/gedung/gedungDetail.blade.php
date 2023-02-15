@@ -33,7 +33,7 @@
             <div class="ui raised segment">
                 @foreach ($kalender as $kd)
                     @php
-                        $calId = $kd->embed_kalender;
+                        $calId = $kd->kalender_id;
                     @endphp
                     <script type='text/javascript'>
                         var calId = '<?= $calId ?>'

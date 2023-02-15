@@ -97,11 +97,6 @@
             <div class="ui raised segment">
                 <h3>Software</h3>
                 <table class="ui celled table">
-                    <thead>
-                        <!-- <tr>
-                                                                                                                <th>Software</th>
-                                                                                                            </tr> -->
-                    </thead>
                     <tbody>
                         @foreach ($software as $sf)
                             <tr>
@@ -139,7 +134,7 @@
             <div class="ui raised segment">
                 @foreach ($kalenderLab as $kd)
                     @php
-                        $calId = $kd->embed_kalender;
+                        $calId = $kd->kalender_id;
                     @endphp
                     <script type='text/javascript'>
                         var calId = '<?= $calId ?>'

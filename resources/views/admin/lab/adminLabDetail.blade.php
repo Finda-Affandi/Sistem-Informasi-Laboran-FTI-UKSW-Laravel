@@ -64,6 +64,7 @@
                                 <th>Kelengkapan</th>
                                 <th>Jumlah</th>
                                 <th>Kondisi</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,18 +73,22 @@
                                     <td>{{ $k->kelengkapan }}</td>
                                     <td>{{ $k->jumlah }}</td>
                                     <td>{{ $k->kondisi }}</td>
+                                    <td>
+                                        <center>
+                                            <a href="">
+                                                <div class="ui blue animated button" tabindex="0">
+                                                    <div class="visible content">Edit</div>
+                                                    <div class="hidden content">
+                                                        <i class="pencil alternate icon"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="">
-                        <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Edit</div>
-                            <div class="hidden content">
-                                <i class="pencil alternate icon"></i>
-                            </div>
-                        </div>
-                    </a>
                     <a href="{{ route('Kelengkapan.create') }}">
                         <div class="ui blue animated button" tabindex="0">
                             <div class="visible content">Tambah</div>
@@ -177,15 +182,27 @@
                             @foreach ($software as $sf)
                                 <tr>
                                     <td>{{ $sf->software }}</td>
+                                    <td>
+                                        <center>
+                                            <a href="">
+                                                <div class="ui blue animated button" tabindex="0">
+                                                    <div class="visible content">Edit</div>
+                                                    <div class="hidden content">
+                                                        <i class="pencil alternate icon"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="">
+                    <a href="{{ route('Software.create') }}">
                         <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Edit</div>
+                            <div class="visible content">Tambah Software</div>
                             <div class="hidden content">
-                                <i class="pencil alternate icon"></i>
+                                <i class="plus icon"></i>
                             </div>
                         </div>
                     </a>
@@ -220,6 +237,7 @@
                                         <th>No Komputer</th>
                                         <th>Kondisi</th>
                                         <th>Keterangan</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -228,6 +246,18 @@
                                             <td>{{ $kl->no_komputer }}</td>
                                             <td>{{ $kl->kondisi }}</td>
                                             <td>{{ $kl->keterangan }}</td>
+                                            <td>
+                                                <center>
+                                                    <a href="">
+                                                        <div class="ui blue animated button" tabindex="0">
+                                                            <div class="visible content">Edit</div>
+                                                            <div class="hidden content">
+                                                                <i class="pencil alternate icon"></i>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </center>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -252,7 +282,7 @@
                         <br>
                         <p>Kalender belum ditambahkan!</p>
                         <br>
-                        <a href="">
+                        <a href="{{ route('Kalender.create') }}">
                             <div class="ui blue animated button" tabindex="0">
                                 <div class="visible content">Tambah Kalender</div>
                                 <div class="hidden content">

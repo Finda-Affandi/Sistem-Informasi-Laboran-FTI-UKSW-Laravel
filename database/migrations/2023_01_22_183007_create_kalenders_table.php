@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('kalenders', function (Blueprint $table) {
             $table->id();
             $table->string('ruangan');
-            $table->text('embed_kalender');
+            $table->text('kalender_id');
         });
     }
 

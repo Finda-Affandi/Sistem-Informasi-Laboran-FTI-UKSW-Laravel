@@ -25,7 +25,7 @@ class KelengkapanRuangController extends Controller
      */
     public function create()
     {
-        return view('admin.all.adminAddKelengkapan');
+        return view('admin.lab.adminAddKelengkapan');
     }
 
     /**
