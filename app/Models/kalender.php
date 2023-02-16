@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class kalender extends Model
 {
     use HasFactory;
+    protected $table = 'kalenders';
+    public $timestamps = false;
 }

@@ -81,9 +81,7 @@
         </div>
     </div>
 
-    <div class="ui container">
-        @yield('content')
-    </div>
+    @yield('content')
 
 </body>
 

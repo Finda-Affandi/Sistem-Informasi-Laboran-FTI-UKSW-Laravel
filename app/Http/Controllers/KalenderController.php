@@ -36,7 +36,11 @@ class KalenderController extends Controller
      */
     public function store(StorekalenderRequest $request)
     {
-        //
+        $store = new kalender;
+        $store->ruangan = $request->ruangan;
+        $store->kalender_id = $request->kalender_id;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**
