@@ -5,9 +5,6 @@
         $_SESSION['idRuang'] = $id;
     @endphp
     <link rel="stylesheet" href="{{ asset('css/admin.lab/admin.ruangLabDetail.css') }}">
-    <a href="/adminRuangLab">
-        <i class="big arrow left icon" id="back"></i>
-    </a>
     <div class="ui container" id="container">
         <div class="ui stackable two column grid">
             <div class="column">
