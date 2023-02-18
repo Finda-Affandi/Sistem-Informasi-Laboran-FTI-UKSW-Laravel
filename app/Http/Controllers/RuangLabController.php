@@ -113,13 +113,15 @@ class RuangLabController extends Controller
      */
     public function update(Updateruang_labRequest $request, $id)
     {
+        $kontak = "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=" . $request->kontak_pic;
+
         $store = ruang_lab::find($id);
         $store->ruangan = $request->ruangan;
         $store->nama_ruangan = $request->nama_ruangan;
         $store->view = $request->view;
         $store->jumlah_komputer = $request->jumlah_komputer;
         $store->nama_pic = $request->nama_pic;
-        $store->kontak_pic = $request->kontak_pic;
+        $store->kontak_pic = $kontak;
         $store->save();
         return redirect()->route('RuangLab.show', $request->ruangan);
     }

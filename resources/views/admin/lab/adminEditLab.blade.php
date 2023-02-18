@@ -33,7 +33,8 @@
                 <div class="field">
                     <label>Email PIC</label>
                     <input type="text" name="kontak_pic" placeholder="Email PIC"
-                        class="form-control"value="{{ $lab->kontak_pic }}">
+                        class="form-control"value="@php
+echo Str::substr($lab->kontak_pic, 55); @endphp">
                 </div>
                 <br>
                 <button type="submit" class="ui blue animated button" tabindex="0">

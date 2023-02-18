@@ -64,7 +64,7 @@
                             </a>
                         </center>
                     @else
-                        <table class="ui celled table">
+                        <table class="ui selectable unstackable table">
                             <thead>
                                 <tr>
                                     <th>Kelengkapan</th>
@@ -81,14 +81,17 @@
                                         <td>{{ $k->kondisi }}</td>
                                         <td>
                                             <center>
-                                                <a href="">
-                                                    <div class="ui blue animated button" tabindex="0">
-                                                        <div class="visible content">Edit</div>
-                                                        <div class="hidden content">
-                                                            <i class="pencil alternate icon"></i>
-                                                        </div>
+                                                <div class="ui dropdown">
+                                                    <i class="ellipsis vertical icon"></i>
+                                                    <div class="menu">
+                                                        <a href="" class="item">
+                                                            Edit
+                                                        </a>
+                                                        <a href="" class="item">
+                                                            Delete
+                                                        </a>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </center>
                                         </td>
                                     </tr>
@@ -237,7 +240,7 @@
                                     </a>
                                 </center>
                             @else
-                                <table class="ui celled table">
+                                <table class="ui selectable unstackable table">
                                     <thead>
                                         <tr>
                                             <th>No Komputer</th>
@@ -254,14 +257,17 @@
                                                 <td>{{ $kl->keterangan }}</td>
                                                 <td>
                                                     <center>
-                                                        <a href="">
-                                                            <div class="ui blue animated button" tabindex="0">
-                                                                <div class="visible content">Edit</div>
-                                                                <div class="hidden content">
-                                                                    <i class="pencil alternate icon"></i>
-                                                                </div>
+                                                        <div class="ui dropdown">
+                                                            <i class="ellipsis vertical icon"></i>
+                                                            <div class="menu">
+                                                                <a href="" class="item">
+                                                                    Edit
+                                                                </a>
+                                                                <a href="" class="item">
+                                                                    Delete
+                                                                </a>
                                                             </div>
-                                                        </a>
+                                                        </div>
                                                     </center>
                                                 </td>
                                             </tr>
@@ -364,6 +370,11 @@
     <script>
         $(function() {
             $('.ui.accordion').accordion();
+        });
+
+        $(function() {
+            $('.ui.dropdown')
+                .dropdown();
         });
     </script>
 @endsection

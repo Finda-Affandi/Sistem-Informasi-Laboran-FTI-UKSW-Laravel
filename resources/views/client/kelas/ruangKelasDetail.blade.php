@@ -8,7 +8,7 @@
                     <h3>{{ $id }}</h3>
                     @foreach ($ruangKelas as $rk)
                         <p>Kapasitas : {{ $rk->kapasitas }}</p>
-                        <table class="ui celled table">
+                        <table class="ui selectable unstackable table">
                             <thead>
                                 <tr>
                                     <th>Kelengkapan</th>

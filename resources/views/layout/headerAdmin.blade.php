@@ -21,6 +21,7 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/gcal.min.js'></script>
     <link rel="stylesheet" href="{{ asset('css/kalender.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/container.css') }}">
 
 </head>
 

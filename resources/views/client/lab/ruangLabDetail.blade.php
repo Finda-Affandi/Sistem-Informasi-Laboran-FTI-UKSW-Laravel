@@ -39,7 +39,7 @@
             <div class="column">
                 <div class="ui raised segment">
                     <h3>Kelengkapan</h3>
-                    <table class="ui celled table">
+                    <table class="ui selectable unstackable table">
                         <thead>
                             <tr>
                                 <th>Kelengkapan</th>
@@ -111,7 +111,7 @@
             <div class="column">
                 <div class="ui raised segment">
                     <h3>Kondisi PC</h3>
-                    <table class="ui celled table">
+                    <table class="ui selectable unstackable table">
                         <thead>
                             <tr>
                                 <th>No Komputer</th>

@@ -9,7 +9,7 @@
                     @foreach ($gedung as $g)
                         <p>{{ $g->nama_ruangan }}</p>
                         <p>Kapasitas : {{ $g->kapasitas }}</p>
-                        <table class="ui celled table">
+                        <table class="ui selectable unstackable table">
                             <thead>
                                 <tr>
                                     <th>Kelengkapan</th>
