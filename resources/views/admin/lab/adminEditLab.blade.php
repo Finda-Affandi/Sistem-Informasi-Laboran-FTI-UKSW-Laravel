@@ -5,7 +5,7 @@
             <form role="form" class="ui form" action="{{ route('RuangLab.update', $lab->id) }}" method="POST">
                 @csrf
                 {{ method_field('PUT') }}
-                <div class="field">
+                <div class="disabled field">
                     <label>Ruangan</label>
                     <input type="text" name="ruangan" placeholder="Ruangan" class="form-control"
                         value="{{ $lab->ruangan }}">

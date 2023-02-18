@@ -28,7 +28,9 @@
                                 </tr>
                                 <tr>
                                     <td>Email PIC</td>
-                                    <td>{{ $rl->kontak_pic }}</td>
+                                    <td>@php
+                                        echo Str::substr($rl->kontak_pic, 55);
+                                    @endphp</td>
                                 </tr>
 
                             </tbody>
@@ -335,20 +337,26 @@
             </div>
             <div class="sixteen wide column">
                 <div class="ui raised segment">
-                    <h3>View Ruangan</h3>
-                    @foreach ($ruangLab as $rl)
-                        @php
-                            echo $rl->view;
-                        @endphp
-                    @endforeach
-                    <a href="">
-                        <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Edit</div>
-                            <div class="hidden content">
-                                <i class="pencil alternate icon"></i>
-                            </div>
+                    <div class="ui accordion">
+                        <div class="title">
+                            <h3>View Ruangan <i class="dropdown icon"></i></h3>
                         </div>
-                    </a>
+                        <div class="content">
+                            @foreach ($ruangLab as $rl)
+                                @php
+                                    echo $rl->view;
+                                @endphp
+                            @endforeach
+                            <a href="">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">
+                                        <i class="pencil alternate icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ class RuangLabController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.lab.adminRuangLab');
     }
 
     /**
@@ -70,7 +70,7 @@ class RuangLabController extends Controller
         $store->nama_pic = $request->nama_pic;
         $store->kontak_pic = $kontak;
         $store->save();
-        return view('admin.lab.adminRuangLab');
+        return redirect()->route('RuangLab.index');
     }
 
     /**
