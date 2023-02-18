@@ -20,49 +20,72 @@
 @section('content')
     <div class="ui container">
         <div class="ui vertical segment">
-            <h3>Ruang Kelas</h3>
-            <div class="ui stackable five column grid">
-                @foreach ($sortedRuangKelas as $r)
-                    <div class="column">
-                        <a href="{{ Route('KelasDetail.show', $r->ruangan) }}">
-                            <div class="ui rasied segment">
-                                <h3>{{ $r->ruangan }}</h3>
-                                <p>{{ $r->nama_ruangan }}</p>
+            <div class="ui accordion">
+                <div class="title">
+                    <h3>Ruang Kelas <i class="dropdown icon"></i></h3>
+                </div>
+                <div class="content">
+                    <div class="ui stackable five column grid">
+                        @foreach ($sortedRuangKelas as $r)
+                            <div class="column">
+                                <a href="{{ Route('KelasDetail.show', $r->ruangan) }}">
+                                    <div class="ui rasied segment">
+                                        <h3>{{ $r->ruangan }}</h3>
+                                        <p>{{ $r->nama_ruangan }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
         <div class="ui vertical segment">
-            <h3>Ruang Lab</h3>
-            <div class="ui stackable five column grid">
-                @foreach ($sortedRuangLab as $r)
-                    <div class="column">
-                        <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
-                            <div class="ui rasied segment">
-                                <h3>{{ $r->ruangan }}</h3>
-                                <p>{{ $r->nama_ruangan }}</p>
+            <div class="ui accordion">
+                <div class="title">
+                    <h3>Ruang Lab <i class="dropdown icon"></i></h3>
+                </div>
+                <div class="content">
+                    <div class="ui stackable five column grid">
+                        @foreach ($sortedRuangLab as $r)
+                            <div class="column">
+                                <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
+                                    <div class="ui rasied segment">
+                                        <h3>{{ $r->ruangan }}</h3>
+                                        <p>{{ $r->nama_ruangan }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
         <div class="ui vertical segment">
-            <h3>Gedung FTI</h3>
-            <div class="ui stackable five column grid">
-                @foreach ($sortedGedungFti as $g)
-                    <div class="column">
-                        <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
-                            <div class="ui rasied segment">
-                                <h3>{{ $g->ruangan }}</h3>
-                                <p>{{ $g->nama_ruangan }}</p>
+            <div class="ui accordion">
+                <div class="title">
+                    <h3>Gedung FTI <i class="dropdown icon"></i></h3>
+                </div>
+                <div class="content">
+                    <div class="ui stackable five column grid">
+                        @foreach ($sortedGedungFti as $g)
+                            <div class="column">
+                                <a href="{{ Route('LabDetail.show', $r->ruangan) }}">
+                                    <div class="ui rasied segment">
+                                        <h3>{{ $g->ruangan }}</h3>
+                                        <p>{{ $g->nama_ruangan }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        $(function() {
+            $('.ui.accordion').accordion();
+        });
+    </script>
 @endsection

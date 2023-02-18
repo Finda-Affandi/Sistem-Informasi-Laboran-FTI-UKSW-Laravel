@@ -47,7 +47,7 @@ class RuangLabController extends Controller
             if($i == 0) {
                 $store = new komputer_lab;
                 $store->ruangan = $request->ruangan;
-                $store->no_komputer = "Pengajar"; 
+                $store->no_komputer = "Pengajar";
                 $store->kondisi = "Baik";
                 $store->keterangan = " ";
                 $store->save();
@@ -55,7 +55,7 @@ class RuangLabController extends Controller
             else {
                 $store = new komputer_lab;
                 $store->ruangan = $request->ruangan;
-                $store->no_komputer = $i; 
+                $store->no_komputer = $i;
                 $store->kondisi = "Baik";
                 $store->keterangan = " ";
                 $store->save();
@@ -100,7 +100,7 @@ class RuangLabController extends Controller
      */
     public function edit(ruang_lab $ruang_lab)
     {
-        //
+
     }
 
     /**

@@ -10,9 +10,10 @@
             <div class="column">
                 <div class="ui raised segment">
                     <h3>Detail Ruangan</h3>
-                    <table class="ui celled table">
-                        <tbody>
-                            @foreach ($ruangLab as $rl)
+                    @foreach ($ruangLab as $rl)
+                        <table class="ui celled table">
+                            <tbody>
+
                                 <tr>
                                     <td>Ruangan</td>
                                     <td>{{ $rl->ruangan }}</td>
@@ -29,17 +30,18 @@
                                     <td>Email PIC</td>
                                     <td>{{ $rl->kontak_pic }}</td>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <a href="">
-                        <div class="ui blue animated button" tabindex="0">
-                            <div class="visible content">Edit</div>
-                            <div class="hidden content">
-                                <i class="pencil alternate icon"></i>
+
+                            </tbody>
+                        </table>
+                        <a href="{{ route('RuangLab.edit', $rl->id) }}">
+                            <div class="ui blue animated button" tabindex="0">
+                                <div class="visible content">Edit</div>
+                                <div class="hidden content">
+                                    <i class="pencil alternate icon"></i>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                 </div>
             </div>
             <div class="column">
