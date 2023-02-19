@@ -56,9 +56,10 @@ class KomputerLabController extends Controller
      * @param  \App\Models\komputer_lab  $komputer_lab
      * @return \Illuminate\Http\Response
      */
-    public function edit(komputer_lab $komputer_lab)
+    public function edit($id)
     {
-        //
+        $komputer = komputer_lab::find($id);
+        return view('admin.lab.adminEditKomputer', compact('komputer'));
     }
 
     /**
@@ -68,9 +69,15 @@ class KomputerLabController extends Controller
      * @param  \App\Models\komputer_lab  $komputer_lab
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatekomputer_labRequest $request, komputer_lab $komputer_lab)
+    public function update(Updatekomputer_labRequest $request, $id)
     {
-        //
+        $store = komputer_lab::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->no_komputer = $request->no_komputer;
+        $store->kondisi = $request->kondisi;
+        $store->keterangan = $request->keterangan;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Http\Controllers\KelengkapanRuangController;
 use App\Http\Controllers\SpekKomputerController;
 use App\Http\Controllers\SoftwareLabController;
 use App\Http\Controllers\KalenderController;
+use App\Http\Controllers\KomputerLabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,5 @@ Route::resource('Spesifikasi', SpekKomputerController::class);
 Route::resource('Software', SoftwareLabController::class);
 
 Route::resource('Kalender', KalenderController::class);
+
+Route::resource('Komputer', KomputerLabController::class);

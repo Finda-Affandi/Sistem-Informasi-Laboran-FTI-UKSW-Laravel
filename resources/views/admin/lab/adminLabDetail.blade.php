@@ -263,7 +263,8 @@
                                                         <div class="ui dropdown">
                                                             <i class="ellipsis vertical icon"></i>
                                                             <div class="menu">
-                                                                <a href="" class="item">
+                                                                <a href="{{ route('Komputer.edit', $kl->id) }}"
+                                                                    class="item">
                                                                     Edit
                                                                 </a>
                                                                 <a href="" class="item">
@@ -333,6 +334,7 @@
                             </script>
                             <div id='calendar'></div>
                         @endforeach
+                        <br>
                         <a href="">
                             <div class="ui blue animated button" tabindex="0">
                                 <div class="visible content">Edit</div>

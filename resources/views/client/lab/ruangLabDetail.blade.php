@@ -164,11 +164,13 @@
             <div class="sixteen wide column">
                 <div class="ui raised segment">
                     <h3>View Ruangan</h3>
-                    @foreach ($ruangLab as $rl)
-                        @php
-                            echo $rl->view;
-                        @endphp
-                    @endforeach
+                    <div class="iframe-container">
+                        @foreach ($ruangLab as $rl)
+                            @php
+                                echo $rl->view;
+                            @endphp
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
