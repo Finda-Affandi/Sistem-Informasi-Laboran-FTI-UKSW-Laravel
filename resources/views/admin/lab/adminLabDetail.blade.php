@@ -83,7 +83,7 @@
                                                 <div class="ui dropdown">
                                                     <i class="ellipsis vertical icon"></i>
                                                     <div class="menu">
-                                                        <a href="" class="item">
+                                                        <a href="{{ route('Kelengkapan.edit', $k->id) }}" class="item">
                                                             Edit
                                                         </a>
                                                         <a href="" class="item">
@@ -347,11 +347,13 @@
                             <h3>View Ruangan <i class="dropdown icon"></i></h3>
                         </div>
                         <div class="content">
-                            @foreach ($ruangLab as $rl)
-                                @php
-                                    echo $rl->view;
-                                @endphp
-                            @endforeach
+                            <div class="iframe-container">
+                                @foreach ($ruangLab as $rl)
+                                    @php
+                                        echo $rl->view;
+                                    @endphp
+                                @endforeach
+                            </div>
                             <a href="">
                                 <div class="ui blue animated button" tabindex="0">
                                     <div class="visible content">Edit</div>

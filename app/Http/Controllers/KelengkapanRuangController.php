@@ -62,9 +62,10 @@ class KelengkapanRuangController extends Controller
      * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function edit(kelengkapan_ruang $kelengkapan_ruang)
+    public function edit($id)
     {
-        //
+        $kelengkapan = kelengkapan_ruang::find($id);
+        return view('admin.lab.adminEditKelengkapan', compact('kelengkapan'));
     }
 
     /**
@@ -74,9 +75,15 @@ class KelengkapanRuangController extends Controller
      * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatekelengkapan_ruangRequest $request, kelengkapan_ruang $kelengkapan_ruang)
+    public function update(Updatekelengkapan_ruangRequest $request, $id)
     {
-        //
+        $store = kelengkapan_ruang::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->kelengkapan = $request->kelengkapan;
+        $store->jumlah = $request->jumlah;
+        $store->kondisi = $request->kondisi;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**
