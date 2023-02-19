@@ -4,6 +4,7 @@
         session_start();
         $_SESSION['idRuang'] = $id;
     @endphp
+    <link rel="stylesheet" href="{{ asset('css/admin.lab/admin.ruangLabDetail.css') }}">
     <div class="ui container" id="container">
         <div class="ui stackable two column grid">
             <div class="column">
@@ -87,7 +88,12 @@
                                                             Edit
                                                         </a>
                                                         <a href="" class="item">
-                                                            Delete
+                                                            <form action="{{ route('Kelengkapan.destroy', $k->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                {{ method_field('DELETE') }}
+                                                                <button type="submit" id="delete">Delete</button>
+                                                            </form>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -200,7 +206,12 @@
                                                             Edit
                                                         </a>
                                                         <a href="" class="item">
-                                                            Delete
+                                                            <form action="{{ route('Software.destroy', $sf->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                {{ method_field('DELETE') }}
+                                                                <button type="submit" id="delete">Delete</button>
+                                                            </form>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -333,16 +344,17 @@
                                 });
                             </script>
                             <div id='calendar'></div>
-                        @endforeach
-                        <br>
-                        <a href="">
-                            <div class="ui blue animated button" tabindex="0">
-                                <div class="visible content">Edit</div>
-                                <div class="hidden content">
-                                    <i class="pencil alternate icon"></i>
+
+                            <br>
+                            <a href="{{ route('Kalender.edit', $kd->id) }}">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">
+                                        <i class="pencil alternate icon"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -352,28 +364,32 @@
                         <div class="title">
                             <h3>View Ruangan <i class="dropdown icon"></i></h3>
                         </div>
-                        <div class="content">
-                            <div class="iframe-container">
-                                @foreach ($ruangLab as $rl)
+                        @foreach ($ruangLab as $rl)
+                            <div class="content">
+                                <div class="iframe-container">
                                     @php
                                         echo $rl->view;
                                     @endphp
-                                @endforeach
-                            </div>
-                            <a href="">
-                                <div class="ui blue animated button" tabindex="0">
-                                    <div class="visible content">Edit</div>
-                                    <div class="hidden content">
-                                        <i class="pencil alternate icon"></i>
-                                    </div>
                                 </div>
-                            </a>
-                        </div>
+                                <br>
+                                <a href="{{ route('LabDetail.edit', $rl->id) }}">
+                                    <div class="ui blue animated button" tabindex="0">
+                                        <div class="visible content">Edit</div>
+                                        <div class="hidden content">
+                                            <i class="pencil alternate icon"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <script>
         $(function() {
             $('.ui.accordion').accordion();
@@ -382,6 +398,11 @@
         $(function() {
             $('.ui.dropdown')
                 .dropdown();
+        });
+
+        $('#delete').click(function() {
+            $('.mini.modal')
+                .modal('show');
         });
     </script>
 @endsection

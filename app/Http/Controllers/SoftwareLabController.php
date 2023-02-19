@@ -88,8 +88,12 @@ class SoftwareLabController extends Controller
      * @param  \App\Models\software_lab  $software_lab
      * @return \Illuminate\Http\Response
      */
-    public function destroy(software_lab $software_lab)
+    public function destroy($id)
     {
-        //
+        $software = software_lab::find($id);
+
+        $ruangan = $software->ruangan;
+        $software->delete();
+        return redirect()->route('RuangLab.show', $ruangan);
     }
 }

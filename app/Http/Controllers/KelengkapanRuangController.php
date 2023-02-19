@@ -92,8 +92,12 @@ class KelengkapanRuangController extends Controller
      * @param  \App\Models\kelengkapan_ruang  $kelengkapan_ruang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kelengkapan_ruang $kelengkapan_ruang)
+    public function destroy($id)
     {
-        //
+        $kelengkapan = kelengkapan_ruang::find($id);
+
+        $ruangan = $kelengkapan->ruangan;
+        $kelengkapan->delete();
+        return redirect()->route('RuangLab.show', $ruangan);
     }
 }

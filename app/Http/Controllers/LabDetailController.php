@@ -70,7 +70,8 @@ class LabDetailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $view = ruang_lab::find($id);
+        return view('admin.lab.adminEditView', compact('view'));
     }
 
     /**
@@ -82,7 +83,11 @@ class LabDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $store = ruang_lab::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->view = $request->view;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

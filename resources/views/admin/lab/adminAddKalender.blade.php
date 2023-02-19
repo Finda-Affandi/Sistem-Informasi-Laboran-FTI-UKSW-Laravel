@@ -11,8 +11,8 @@
                 @csrf
                 <input type="hidden" name="ruangan" value="{{ $id }}" class="form-control">
                 <div class="field">
-                    <label>Kalender</label>
-                    <input type="text" name="kalender_id" placeholder="Kalender" class="form-control">
+                    <label>Kalender ID</label>
+                    <input type="text" name="kalender_id" placeholder="Kalender ID" class="form-control">
                 </div>
                 <button type="submit" class="ui blue animated button" tabindex="0">
                     <div class="visible content">Tambah</div>

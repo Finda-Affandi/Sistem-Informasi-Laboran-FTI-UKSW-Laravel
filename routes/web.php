@@ -92,3 +92,4 @@ Route::resource('Software', SoftwareLabController::class);
 Route::resource('Kalender', KalenderController::class);
 
 Route::resource('Komputer', KomputerLabController::class);
+

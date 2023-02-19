@@ -60,9 +60,10 @@ class KalenderController extends Controller
      * @param  \App\Models\kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function edit(kalender $kalender)
+    public function edit($id)
     {
-        //
+        $kalender = kalender::find($id);
+        return view('admin.lab.adminEditKalender', compact('kalender'));
     }
 
     /**
@@ -72,9 +73,13 @@ class KalenderController extends Controller
      * @param  \App\Models\kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekalenderRequest $request, kalender $kalender)
+    public function update(UpdatekalenderRequest $request, $id)
     {
-        //
+        $store = kalender::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->kalender_id = $request->kalender_id;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**
