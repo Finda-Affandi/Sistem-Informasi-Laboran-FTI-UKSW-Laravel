@@ -60,9 +60,10 @@ class SoftwareLabController extends Controller
      * @param  \App\Models\software_lab  $software_lab
      * @return \Illuminate\Http\Response
      */
-    public function edit(software_lab $software_lab)
+    public function edit($id)
     {
-        //
+        $software = software_lab::find($id);
+        return view('admin.lab.adminEditSoftware', compact('software'));
     }
 
     /**
@@ -72,9 +73,13 @@ class SoftwareLabController extends Controller
      * @param  \App\Models\software_lab  $software_lab
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatesoftware_labRequest $request, software_lab $software_lab)
+    public function update(Updatesoftware_labRequest $request, $id)
     {
-        //
+        $store = software_lab::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->software = $request->software;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

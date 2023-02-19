@@ -196,7 +196,7 @@
                                                 <div class="ui dropdown">
                                                     <i class="ellipsis vertical icon"></i>
                                                     <div class="menu">
-                                                        <a href="" class="item">
+                                                        <a href="{{ route('Software.edit', $sf->id) }}" class="item">
                                                             Edit
                                                         </a>
                                                         <a href="" class="item">

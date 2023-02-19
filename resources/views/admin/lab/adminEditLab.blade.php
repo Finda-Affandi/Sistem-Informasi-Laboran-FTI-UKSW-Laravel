@@ -38,7 +38,7 @@ echo Str::substr($lab->kontak_pic, 55); @endphp">
                 </div>
                 <br>
                 <button type="submit" class="ui blue animated button" tabindex="0">
-                    <div class="visible content">Tambah</div>
+                    <div class="visible content">Update</div>
                     <div class="hidden content">
                         <i class="right arrow icon"></i>
                     </div>
