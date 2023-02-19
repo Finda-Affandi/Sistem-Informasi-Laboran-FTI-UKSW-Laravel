@@ -65,9 +65,10 @@ class SpekKomputerController extends Controller
      * @param  \App\Models\spek_komputer  $spek_komputer
      * @return \Illuminate\Http\Response
      */
-    public function edit(spek_komputer $spek_komputer)
+    public function edit($id)
     {
-        //
+        $spesifikasi = spek_komputer::find($id);
+        return view('admin.lab.adminEditSpesifikasi', compact('spesifikasi'));
     }
 
     /**
@@ -77,9 +78,18 @@ class SpekKomputerController extends Controller
      * @param  \App\Models\spek_komputer  $spek_komputer
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatespek_komputerRequest $request, spek_komputer $spek_komputer)
+    public function update(Updatespek_komputerRequest $request, $id)
     {
-        //
+        $store = spek_komputer::find($id);
+        $store->ruangan = $request->ruangan;
+        $store->processor = $request->processor;
+        $store->ram = $request->ram;
+        $store->tipe_penyimpanan = $request->tipe_penyimpanan;
+        $store->monitor = $request->monitor;
+        $store->motherboard = $request->motherboard;
+        $store->tipe = $request->tipe;
+        $store->save();
+        return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
     /**

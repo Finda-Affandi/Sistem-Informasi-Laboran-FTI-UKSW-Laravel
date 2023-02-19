@@ -126,9 +126,9 @@
                             </a>
                         </center>
                     @else
-                        <table class="ui celled table">
-                            <tbody>
-                                @foreach ($spekKomputer as $sk)
+                        @foreach ($spekKomputer as $sk)
+                            <table class="ui celled table">
+                                <tbody>
                                     <tr>
                                         <td>Processor</td>
                                         <td>{{ $sk->processor }}</td>
@@ -153,17 +153,18 @@
                                         <td>Tipe Lab</td>
                                         <td>{{ $sk->tipe }}</td>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <a href="">
-                            <div class="ui blue animated button" tabindex="0">
-                                <div class="visible content">Edit</div>
-                                <div class="hidden content">
-                                    <i class="pencil alternate icon"></i>
+
+                                </tbody>
+                            </table>
+                            <a href="{{ route('Spesifikasi.edit', $sk->id) }}">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">
+                                        <i class="pencil alternate icon"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -185,21 +186,24 @@
                             </a>
                         </center>
                     @else
-                        <table class="ui celled table">
+                        <table class="ui selectable unstackable table">
                             <tbody>
                                 @foreach ($software as $sf)
                                     <tr>
                                         <td>{{ $sf->software }}</td>
                                         <td>
                                             <center>
-                                                <a href="">
-                                                    <div class="ui blue animated button" tabindex="0">
-                                                        <div class="visible content">Edit</div>
-                                                        <div class="hidden content">
-                                                            <i class="pencil alternate icon"></i>
-                                                        </div>
+                                                <div class="ui dropdown">
+                                                    <i class="ellipsis vertical icon"></i>
+                                                    <div class="menu">
+                                                        <a href="" class="item">
+                                                            Edit
+                                                        </a>
+                                                        <a href="" class="item">
+                                                            Delete
+                                                        </a>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </center>
                                         </td>
                                     </tr>
