@@ -62,7 +62,7 @@
             </div>
             <div class="sixteen wide column">
                 <div class="ui raised segment">
-                    <h3>View Ruangan</h3>
+                    <h3>View Ruangan 360°</h3>
                     <div class="iframe-container">
                         @foreach ($gedung as $g)
                             @php

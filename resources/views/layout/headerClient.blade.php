@@ -70,6 +70,12 @@
             <a class="item" href="/gedungFti"> Gedung FTI </a>
         @endif
 
+        @if (request()->is('laporan'))
+            <a class="active item" href="/gedungFti"> Lapor Masalah </a>
+        @else
+            <a class="item" href="/gedungFti"> Lapor Masalah</a>
+        @endif
+
         <div class="right menu">
             <div class="item">
                 <div class="ui icon input">
