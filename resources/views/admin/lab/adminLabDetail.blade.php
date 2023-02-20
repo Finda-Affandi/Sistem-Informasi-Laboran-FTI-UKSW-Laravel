@@ -89,7 +89,7 @@
                                                         </a>
                                                         <a href="" class="item">
                                                             <form action="{{ route('Kelengkapan.destroy', $k->id) }}"
-                                                                method="POST">
+                                                                method="POST" enctype="multipart/form-data">
                                                                 @csrf
                                                                 {{ method_field('DELETE') }}
                                                                 <button type="submit" id="delete">Delete</button>
