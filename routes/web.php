@@ -6,6 +6,7 @@ use App\Http\Controllers\DosenDetailController;
 use App\Http\Controllers\KelasDetailController;
 use App\Http\Controllers\GedungDetailController;
 use App\Http\Controllers\RuangLabController;
+use App\Http\Controllers\RuangKelasController;
 use App\Http\Controllers\KelengkapanRuangController;
 use App\Http\Controllers\SpekKomputerController;
 use App\Http\Controllers\SoftwareLabController;
@@ -82,6 +83,8 @@ Route::resource('KelasDetail', KelasDetailController::class);
 Route::resource('GedungDetail', GedungDetailController::class);
 
 Route::resource('RuangLab', RuangLabController::class);
+
+Route::resource('RuangKelas', RuangKelasController::class);
 
 Route::resource('Kelengkapan', KelengkapanRuangController::class);
 

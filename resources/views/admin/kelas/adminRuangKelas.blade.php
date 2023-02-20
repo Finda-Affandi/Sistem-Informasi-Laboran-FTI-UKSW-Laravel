@@ -34,7 +34,7 @@
                             <td>{{ $kls->nama_ruangan }}</td>
                             <td>{{ $kls->kapasitas }}</td>
                             <td>
-                                <a href="">
+                                <a href="{{ route('RuangKelas.show', $kls->ruangan) }}">
                                     <div class="ui blue animated fade button" tabindex="0">
                                         <div class="visible content">
                                             <i class="arrow alternate circle right outline icon"></i>
