@@ -15,7 +15,9 @@ class KelengkapanRuangController extends Controller
      */
     public function index()
     {
-        //
+        session_start();
+        $ruangan = $_SESSION['idRuang'];
+        return redirect()->route('RuangLab.show', $ruangan);
     }
 
     /**
@@ -95,9 +97,7 @@ class KelengkapanRuangController extends Controller
     public function destroy($id)
     {
         $kelengkapan = kelengkapan_ruang::find($id);
-
-        $ruangan = $kelengkapan->ruangan;
         $kelengkapan->delete();
-        return redirect()->route('RuangLab.show', $ruangan);
+        return redirect()->route('Kelengkapan.index');
     }
 }
