@@ -77,32 +77,58 @@
             </div>
             <div class="column">
                 <div class="ui raised segment">
-                    @foreach ($kalenderKelas as $kd)
-                        @php
-                            $calId = $kd->kalender_id;
-                        @endphp
-                        <script type='text/javascript'>
-                            var calId = '<?= $calId ?>'
+                    @if (count($kalenderKelas) == 0)
+                        <center>
+                            <br>
+                            <p>Kalender belum ditambahkan!</p>
+                            <br>
+                            <a href="{{ route('Kalender.create') }}">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Tambah Kalender</div>
+                                    <div class="hidden content">
+                                        <i class="plus icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </center>
+                    @else
+                        @foreach ($kalenderKelas as $kd)
+                            @php
+                                $calId = $kd->kalender_id;
+                            @endphp
+                            <script type='text/javascript'>
+                                var calId = '<?= $calId ?>'
 
-                            $(document).ready(function() {
+                                $(document).ready(function() {
 
-                                $('#calendar').fullCalendar({
-                                    plugins: ['dayGrid', 'list', 'googleCalendar'],
-                                    header: {
-                                        left: 'prev,next, today',
-                                        center: 'title',
-                                        right: 'dayGridMonth, month, listYear'
-                                    },
-                                    googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
-                                    events: {
-                                        googleCalendarId: calId
-                                    },
-                                    timeFormat: 'H(:mm)'
+                                    $('#calendar').fullCalendar({
+                                        plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                        header: {
+                                            left: 'prev,next, today',
+                                            center: 'title',
+                                            right: 'dayGridMonth, month, listYear'
+                                        },
+                                        googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
+                                        events: {
+                                            googleCalendarId: calId
+                                        },
+                                        timeFormat: 'H(:mm)'
+                                    });
                                 });
-                            });
-                        </script>
-                        <div id='calendar'></div>
-                    @endforeach
+                            </script>
+                            <div id='calendar'></div>
+
+                            <br>
+                            <a href="{{ route('Kalender.edit', $kd->id) }}">
+                                <div class="ui blue animated button" tabindex="0">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">
+                                        <i class="pencil alternate icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="column">
