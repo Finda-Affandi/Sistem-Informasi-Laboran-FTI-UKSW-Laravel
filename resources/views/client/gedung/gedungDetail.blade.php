@@ -43,10 +43,18 @@
 
                                 $('#calendar').fullCalendar({
                                     plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                    views: {
+                                        listWeek: {
+                                            buttonText: 'Week'
+                                        },
+                                        month: {
+                                            buttonText: 'Month'
+                                        },
+                                    },
                                     header: {
-                                        left: 'prev,next, today',
+                                        left: 'prev, next, today',
                                         center: 'title',
-                                        right: 'dayGridMonth, month, listYear'
+                                        right: 'resourceTimeGridDay, dayGridMonth, month, listWeek'
                                     },
                                     googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
                                     events: {

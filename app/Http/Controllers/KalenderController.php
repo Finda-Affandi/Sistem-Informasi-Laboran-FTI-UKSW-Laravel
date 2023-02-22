@@ -40,6 +40,13 @@ class KalenderController extends Controller
         $store->ruangan = $request->ruangan;
         $store->kalender_id = $request->kalender_id;
         $store->save();
+
+        session_start();
+        $kelas = $_SESSION['kelas'];
+        if($kelas == true) {
+            return redirect()->route('RuangKelas.show', $request->ruangan);
+        }
+
         return redirect()->route('RuangLab.show', $request->ruangan);
     }
 
@@ -79,6 +86,13 @@ class KalenderController extends Controller
         $store->ruangan = $request->ruangan;
         $store->kalender_id = $request->kalender_id;
         $store->save();
+
+        session_start();
+        $kelas = $_SESSION['kelas'];
+        if($kelas == true) {
+            return redirect()->route('RuangKelas.show', $request->ruangan);
+        }
+
         return redirect()->route('RuangLab.show', $request->ruangan);
     }
 

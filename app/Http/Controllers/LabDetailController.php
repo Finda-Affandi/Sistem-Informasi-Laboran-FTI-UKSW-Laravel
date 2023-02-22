@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ruang_lab;
+use App\Models\ruang_kelas;
 use App\Models\kelengkapan_ruang;
 use App\Models\komputer_lab;
 use App\Models\spek_komputer;
@@ -70,6 +71,12 @@ class LabDetailController extends Controller
      */
     public function edit($id)
     {
+        session_start();
+        $kelas = $_SESSION['kelas'];
+        if($kelas == true) {
+            $view = ruang_kelas::find($id);
+            return view('admin.lab.adminEditView', compact('view'));
+        }
         $view = ruang_lab::find($id);
         return view('admin.lab.adminEditView', compact('view'));
     }
@@ -87,6 +94,13 @@ class LabDetailController extends Controller
         $store->ruangan = $request->ruangan;
         $store->view = $request->view;
         $store->save();
+
+        session_start();
+        $kelas = $_SESSION['kelas'];
+        if($kelas == true) {
+            return redirect()->route('RuangKelas.show', $request->ruangan);
+        }
+
         return redirect()->route('RuangLab.show', $request->ruangan);
     }
 

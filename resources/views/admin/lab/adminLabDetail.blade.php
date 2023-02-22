@@ -3,6 +3,7 @@
     @php
         session_start();
         $_SESSION['idRuang'] = $id;
+        $_SESSION['kelas'] = false;
     @endphp
     <link rel="stylesheet" href="{{ asset('css/admin/admin.ruangLabDetail.css') }}">
     <div class="ui container" id="container">
@@ -330,10 +331,18 @@
 
                                     $('#calendar').fullCalendar({
                                         plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                        views: {
+                                            listWeek: {
+                                                buttonText: 'Week'
+                                            },
+                                            month: {
+                                                buttonText: 'Month'
+                                            },
+                                        },
                                         header: {
-                                            left: 'prev,next, today',
+                                            left: 'prev, next, today',
                                             center: 'title',
-                                            right: 'dayGridMonth, month, listYear'
+                                            right: 'resourceTimeGridDay, dayGridMonth, month, listWeek'
                                         },
                                         googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
                                         events: {

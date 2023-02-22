@@ -1,5 +1,9 @@
 @extends('layout.headerAdmin')
 @section('content')
+    @php
+        session_start();
+        $_SESSION['kelas'] = true;
+    @endphp
     <div class="ui container">
         <link rel="stylesheet" href="{{ asset('css/admin/admin.ruangKelasDetail.css') }}">
         <div class="ui stackable one column grid">
@@ -103,10 +107,18 @@
 
                                     $('#calendar').fullCalendar({
                                         plugins: ['dayGrid', 'list', 'googleCalendar'],
+                                        views: {
+                                            listWeek: {
+                                                buttonText: 'Week'
+                                            },
+                                            month: {
+                                                buttonText: 'Month'
+                                            },
+                                        },
                                         header: {
-                                            left: 'prev,next, today',
+                                            left: 'prev, next, today',
                                             center: 'title',
-                                            right: 'dayGridMonth, month, listYear'
+                                            right: 'resourceTimeGridDay, dayGridMonth, month, listWeek'
                                         },
                                         googleCalendarApiKey: 'AIzaSyDSQvD1WnAhaqWM-CnHkfsmU_D5dvqboKs',
                                         events: {
@@ -133,12 +145,27 @@
             </div>
             <div class="column">
                 <div class="ui raised segment">
-                    <h3>View Ruangan 360°</h3>
-                    <div class="iframe-container">
+                    <div class="ui accordion">
+                        <div class="title">
+                            <h3>View Ruangan <i class="dropdown icon"></i></h3>
+                        </div>
                         @foreach ($ruangKelas as $rk)
-                            @php
-                                echo $rk->view;
-                            @endphp
+                            <div class="content">
+                                <div class="iframe-container">
+                                    @php
+                                        echo $rk->view;
+                                    @endphp
+                                </div>
+                                <br>
+                                <a href="{{ route('LabDetail.edit', $rk->id) }}">
+                                    <div class="ui blue animated button" tabindex="0">
+                                        <div class="visible content">Edit</div>
+                                        <div class="hidden content">
+                                            <i class="pencil alternate icon"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -149,6 +176,10 @@
         $(function() {
             $('.ui.dropdown')
                 .dropdown();
+        });
+
+        $(function() {
+            $('.ui.accordion').accordion();
         });
     </script>
 @endsection
