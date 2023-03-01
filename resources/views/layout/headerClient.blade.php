@@ -73,7 +73,7 @@
         @if (request()->is('laporan'))
             <a class="active item" href="/gedungFti"> Lapor Masalah </a>
         @else
-            <a class="item" href="/gedungFti"> Lapor Masalah</a>
+            <a class="item" href="/gedungFti"> Laporkan Masalah</a>
         @endif
 
         <div class="right menu">
