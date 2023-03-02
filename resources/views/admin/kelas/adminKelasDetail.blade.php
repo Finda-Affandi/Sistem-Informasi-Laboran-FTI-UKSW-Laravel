@@ -2,10 +2,11 @@
 @section('content')
     @php
         session_start();
-        $_SESSION['kelas'] = true;
+        $_SESSION['idRuang'] = $id;
+        $_SESSION['ruang'] = 'kelas';
     @endphp
     <div class="ui container">
-        <link rel="stylesheet" href="{{ asset('css/admin/admin.ruangKelasDetail.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin.kelas/admin.ruangKelasDetail.css') }}">
         <div class="ui stackable one column grid">
             <div class="sixteen wide column">
                 <div class="ui raised segment">

@@ -3,11 +3,11 @@
     @php
         session_start();
         $id = $_SESSION['idRuang'];
-        $kelas = $_SESSION['kelas'];
+        $ruang = $_SESSION['ruang'];
     @endphp
     <div class="ui container">
         <div class="ui raised segment">
-            @if ($kelas == true)
+            @if ($ruang == 'kelas')
                 <h3>Ruang Kelas {{ $id }}</h3>
             @else
                 <h3>Ruang Lab {{ $id }}</h3>

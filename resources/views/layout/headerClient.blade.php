@@ -22,19 +22,6 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/gcal.min.js'></script>
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
 
-
-    @if (request()->is('listRuang'))
-        <link rel="stylesheet" href="{{ asset('css/client.listRuang.css') }}">
-    @elseif (request()->is('ruangLab'))
-        <link rel="stylesheet" href="{{ asset('css/client.ruangLab.css') }}">
-    @elseif (request()->is('ruangKelas'))
-        <link rel="stylesheet" href="{{ asset('css/client.ruangKelas.css') }}">
-    @elseif (request()->is('ruangDosen'))
-        <link rel="stylesheet" href="{{ asset('css/client.ruangDosen.css') }}">
-    @elseif (request()->is('gedungFti'))
-        <link rel="stylesheet" href="{{ asset('css/client.gedungFti.css') }}">
-    @endif
-
 </head>
 
 <body>
@@ -71,9 +58,9 @@
         @endif
 
         @if (request()->is('laporan'))
-            <a class="active item" href="/gedungFti"> Lapor Masalah </a>
+            <a class="active item" href="/laporan"> Laporkan Masalah </a>
         @else
-            <a class="item" href="/gedungFti"> Laporkan Masalah</a>
+            <a class="item" href="/laporan"> Laporkan Masalah</a>
         @endif
 
         <div class="right menu">

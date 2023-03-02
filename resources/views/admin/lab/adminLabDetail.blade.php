@@ -3,9 +3,9 @@
     @php
         session_start();
         $_SESSION['idRuang'] = $id;
-        $_SESSION['kelas'] = false;
+        $_SESSION['ruang'] = 'lab';
     @endphp
-    <link rel="stylesheet" href="{{ asset('css/admin/admin.ruangLabDetail.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.lab/admin.ruangLabDetail.css') }}">
     <div class="ui container" id="container">
         <div class="ui stackable two column grid">
             <div class="column">

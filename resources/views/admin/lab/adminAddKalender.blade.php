@@ -2,11 +2,16 @@
 @section('content')
     @php
         session_start();
+        $ruang = $_SESSION['ruang'];
         $id = $_SESSION['idRuang'];
     @endphp
     <div class="ui container">
         <div class="ui raised segment">
-            <h3>Ruang Lab {{ $id }}</h3>
+            @if ($ruang == 'kelas')
+                <h3>Ruang Kelas {{ $id }}</h3>
+            @else
+                <h3>Ruang Lab {{ $id }}</h3>
+            @endif
             <form class="ui form" action="{{ route('Kalender.store') }}" method="POST">
                 @csrf
                 <input type="hidden" name="ruangan" value="{{ $id }}" class="form-control">

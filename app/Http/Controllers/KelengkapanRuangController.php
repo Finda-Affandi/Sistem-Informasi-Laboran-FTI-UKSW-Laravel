@@ -17,8 +17,8 @@ class KelengkapanRuangController extends Controller
     {
         session_start();
         $ruangan = $_SESSION['idRuang'];
-        $kelas = $_SESSION['kelas'];
-        if($kelas == true) {
+        $ruang = $_SESSION['ruang'];
+        if($ruang == "kelas") {
             return redirect()->route('RuangKelas.show', $ruangan);
         }
         return redirect()->route('RuangLab.show', $ruangan);
@@ -50,8 +50,8 @@ class KelengkapanRuangController extends Controller
         $store->save();
 
         session_start();
-        $kelas = $_SESSION['kelas'];
-        if($kelas == true) {
+        $ruang = $_SESSION['ruang'];
+        if($ruang == "kelas") {
             return redirect()->route('RuangKelas.show', $request->ruangan);
         }
 
@@ -98,9 +98,9 @@ class KelengkapanRuangController extends Controller
         $store->save();
 
         session_start();
-        $kelas = $_SESSION['kelas'];
+        $ruang = $_SESSION['ruang'];
 
-        if($kelas == true) {
+        if($ruang == "kelas") {
             return redirect()->route('RuangKelas.show', $request->ruangan);
         }
 
@@ -116,7 +116,7 @@ class KelengkapanRuangController extends Controller
     public function destroy($id)
     {
         $kelengkapan = kelengkapan_ruang::find($id);
-        $kelengkapan->delete();        
+        $kelengkapan->delete();
 
         return redirect()->route('Kelengkapan.index');
     }

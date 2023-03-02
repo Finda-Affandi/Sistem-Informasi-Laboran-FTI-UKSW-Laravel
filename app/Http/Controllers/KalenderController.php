@@ -42,8 +42,8 @@ class KalenderController extends Controller
         $store->save();
 
         session_start();
-        $kelas = $_SESSION['kelas'];
-        if($kelas == true) {
+        $ruang = $_SESSION['ruang'];
+        if($ruang == "kelas") {
             return redirect()->route('RuangKelas.show', $request->ruangan);
         }
 
@@ -88,8 +88,8 @@ class KalenderController extends Controller
         $store->save();
 
         session_start();
-        $kelas = $_SESSION['kelas'];
-        if($kelas == true) {
+        $ruang = $_SESSION['ruang'];
+        if($ruang == "kelas") {
             return redirect()->route('RuangKelas.show', $request->ruangan);
         }
 

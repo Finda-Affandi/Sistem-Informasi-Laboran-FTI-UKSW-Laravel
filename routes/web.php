@@ -50,6 +50,10 @@ Route::get('gedungFti', function () {
     return view('/client/gedung/gedungFti');
 });
 
+Route::get('laporan', function () {
+    return view('/client/laporan/laporan');
+});
+
 // Administrator area
 
 Route::get('administrator', function () {
