@@ -21,56 +21,54 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/gcal.min.js'></script>
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/headerClient.css') }}">
 
 </head>
 
 <body>
-    <div class="ui secondary menu">
+    <div class="ui three column grid" id="navbarContainer">
+        <div class="ui two wide column">
+        </div>
+        <div class="ui twelve wide column">
+            <div class="ui secondary nine item menu" id="navMenu">
 
-        @if (request()->is('jadwalRuang'))
-            <a class="active item" href="/listRuang"> List Ruangan </a>
-        @else
-            <a class="item" href="/listRuang"> List Ruangan </a>
-        @endif
+                @if (request()->is('jadwalRuang'))
+                    <a class="active item" href="/listRuang"><b> List Ruangan </b></a>
+                @else
+                    <a class="item" href="/listRuang"><b> List Ruangan </b></a>
+                @endif
 
-        @if (request()->is('ruangLab'))
-            <a class="active item" href="/ruangLab"> Ruang Lab </a>
-        @else
-            <a class="item" href="/ruangLab"> Ruang Lab </a>
-        @endif
+                @if (request()->is('ruangLab'))
+                    <a class="active item" href="/ruangLab"><b>Ruang Lab</b></a>
+                @else
+                    <a class="item" href="/ruangLab"><b> Ruang Lab </b></a>
+                @endif
 
-        @if (request()->is('ruangKelas'))
-            <a class="active item" href="/ruangKelas"> Ruang Kelas </a>
-        @else
-            <a class="item" href="/ruangKelas"> Ruang Kelas </a>
-        @endif
+                @if (request()->is('ruangKelas'))
+                    <a class="active item" href="/ruangKelas"><b> Ruang Kelas </b></a>
+                @else
+                    <a class="item" href="/ruangKelas"><b> Ruang Kelas </b></a>
+                @endif
 
-        @if (request()->is('ruangDosen'))
-            <a class="active item" href="/ruangDosen"> Ruang Dosen </a>
-        @else
-            <a class="item" href="/ruangDosen"> Ruang Dosen </a>
-        @endif
+                @if (request()->is('ruangDosen'))
+                    <a class="active item" href="/ruangDosen"><b> Ruang Dosen </b></a>
+                @else
+                    <a class="item" href="/ruangDosen"><b> Ruang Dosen </b></a>
+                @endif
 
-        @if (request()->is('gedungFti'))
-            <a class="active item" href="/gedungFti"> Gedung FTI </a>
-        @else
-            <a class="item" href="/gedungFti"> Gedung FTI </a>
-        @endif
+                @if (request()->is('gedungFti'))
+                    <a class="active item" href="/gedungFti"><b> Gedung FTI </b></a>
+                @else
+                    <a class="item" href="/gedungFti"><b> Gedung FTI </b></a>
+                @endif
 
-        @if (request()->is('laporan'))
-            <a class="active item" href="/laporan"> Laporkan Masalah </a>
-        @else
-            <a class="item" href="/laporan"> Laporkan Masalah</a>
-        @endif
+                @if (request()->is('laporan'))
+                    <a class="active item" href="/laporan"><b> Laporkan Masalah </b></a>
+                @else
+                    <a class="item" href="/laporan"><b> Laporkan Masalah </b></a>
+                @endif
 
-        <div class="right menu">
-            <div class="item">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search..." />
-                    <i class="search link icon"></i>
-                </div>
             </div>
-            <a class="ui item"> Logout </a>
         </div>
     </div>
 

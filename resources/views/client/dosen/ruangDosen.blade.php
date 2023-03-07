@@ -27,7 +27,6 @@
                                 foreach ($dosen as $d) {
                                     echo '<b>' . $d->nama_dosen . '</b><br>';
                                     echo $d->jabatan . '<br>';
-                                    echo '<br>';
                                 }
                             @endphp
                         </div>
