@@ -63,9 +63,15 @@
                 @endif
 
                 @if (request()->is('laporan'))
-                    <a class="active item" href="/laporan"><b> Laporkan Masalah </b></a>
+                    <a class="active item" href="/laporan"><b> Lapor </b></a>
                 @else
-                    <a class="item" href="/laporan"><b> Laporkan Masalah </b></a>
+                    <a class="item" href="/laporan"><b> Lapor </b></a>
+                @endif
+
+                @if (request()->is('laporan'))
+                    <a class="active item" href="/laporan"><b> Lost & Found </b></a>
+                @else
+                    <a class="item" href="/laporan"><b> Lost & Found </b></a>
                 @endif
 
             </div>
