@@ -68,7 +68,7 @@
                     <a class="item" href="/laporan"><b> Lapor </b></a>
                 @endif
 
-                @if (request()->is('laporan'))
+                @if (request()->is('lost&found'))
                     <a class="active item" href="/laporan"><b> Lost & Found </b></a>
                 @else
                     <a class="item" href="/laporan"><b> Lost & Found </b></a>
