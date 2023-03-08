@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("statusPelapor");
             $table->string("email");
             $table->string("ruangan");  
-            $table->string("laporan");          
+            $table->text("laporan");          
             $table->dateTime("tanggal");
         });
     }

@@ -25,7 +25,7 @@ class LaporanController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.laporan.addLaporan');
     }
 
     /**
@@ -36,7 +36,18 @@ class LaporanController extends Controller
      */
     public function store(StorelaporanRequest $request)
     {
-        //
+        $dateTime = date("Y-M-d H:i:s");
+
+        $store = new laporan;
+        $store->namaPelapor = $request->namaPelapor;
+        $store->statusPelapor = $request->statusPelapor;
+        $store->email = $request->email;
+        $store->ruangan = $request->ruangan;
+        $store->laporan = $request->laporan;
+        $store->tanggal = $dateTime;
+        $store->save();
+
+        return view("client.laporan.laporan");
     }
 
     /**

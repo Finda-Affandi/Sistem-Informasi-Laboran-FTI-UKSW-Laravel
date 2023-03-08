@@ -12,6 +12,7 @@ use App\Http\Controllers\SpekKomputerController;
 use App\Http\Controllers\SoftwareLabController;
 use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\KomputerLabController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,10 +73,6 @@ Route::get('adminGedungFti', function () {
     return view('/admin/gedung/adminGedungFti');
 });
 
-Route::get('cb', function () {
-    return view('cb');
-});
-
 
 
 Route::resource('LabDetail', LabDetailController::class);
@@ -99,4 +96,6 @@ Route::resource('Software', SoftwareLabController::class);
 Route::resource('Kalender', KalenderController::class);
 
 Route::resource('Komputer', KomputerLabController::class);
+
+Route::resource('Laporan', LaporanController::class);
 

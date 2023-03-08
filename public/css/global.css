@@ -13,8 +13,18 @@
     margin: 0 auto;
 }
 
+a {
+    color: rgb(85, 153, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
 
-.fc .fc-prevMonth-button,
+a:hover {
+    color: rgb(15, 15, 15);
+  }
+
+
+/* .fc .fc-prevMonth-button,
 .fc .fc-nextMonth-button {
 
 }
@@ -29,7 +39,7 @@
 
 .fc .fc-listYear-button {
 
-}
+} */
 
 
 /* Global View */
