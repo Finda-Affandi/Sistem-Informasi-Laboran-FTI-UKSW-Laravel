@@ -36,7 +36,7 @@ class LaporanController extends Controller
      */
     public function store(StorelaporanRequest $request)
     {
-        $dateTime = date("Y-M-d H:i:s");
+        $dateTime = date("Y-m-d H:i:s");
 
         $store = new laporan;
         $store->namaPelapor = $request->namaPelapor;
