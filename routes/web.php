@@ -55,6 +55,9 @@ Route::get('laporan', function () {
     return view('/client/laporan/laporan');
 });
 
+Route::get('lost&found', function () {
+    return view('/client/lostnfound/lostNfound');
+});
 // Administrator area
 
 Route::get('administrator', function () {

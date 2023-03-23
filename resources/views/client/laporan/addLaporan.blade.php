@@ -1,7 +1,7 @@
 @extends('layout/headerEmpty')
 @section('content')
     <div class="ui container">
-        <a href="">
+        <a href="/laporan">
             <i class="large arrow left icon"></i>
         </a>
         <div class="ui raised segment">
